@@ -18,6 +18,7 @@
 
   home.packages = [
     neovim.packages.${pkgs.system}.default
+    pkgs.bat
     pkgs.btop
     pkgs.curl
     pkgs.fd
@@ -36,6 +37,7 @@
     pkgs.nethack
     pkgs.ripgrep
     pkgs.tldr
+    pkgs.yq-go
   ];
 
   home.sessionVariables = {
@@ -85,6 +87,7 @@
       ls = "eza --icons";
       ll = "eza -l --icons --git -a";
       lt = "eza --tree --level=2 --long --icons --git";
+      lx = "eza -lbhHigUmuSa --time-style=long-iso --git --color-scale";
       g = "git";
       lg = "lazygit";
       ld = "lazydocker";
@@ -106,6 +109,10 @@
     enableZshIntegration = true;
   };
 
+  programs.bat = {
+    enable = true;
+  };
+
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
@@ -115,6 +122,11 @@
   };
 
   programs.atuin = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.yazi = {
     enable = true;
     enableZshIntegration = true;
   };
