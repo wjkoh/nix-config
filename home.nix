@@ -117,6 +117,12 @@
     enable = true;
     enableZshIntegration = true;
     defaultCommand = "fd --type f";
+    defaultOptions = [
+      "--height 40%"
+      "--layout=reverse"
+      "--border"
+      "--preview 'bat --style=numbers --color=always --line-range :500 {}'"
+    ];
     fileWidgetCommand = "fd --type f";
     changeDirWidgetCommand = "fd --type d";
   };
