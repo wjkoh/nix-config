@@ -18,22 +18,30 @@
 
   home.packages = [
     neovim.packages.${pkgs.system}.default
-    pkgs.bat
-    pkgs.git
-    pkgs.lazygit
-    pkgs.fx
-    pkgs.gh
-    pkgs.curl
-    pkgs.tldr
-    pkgs.lazydocker
     pkgs.btop
+    pkgs.curl
+    pkgs.fd
+    pkgs.fx
+    pkgs.gemini-cli
+    pkgs.git
+    pkgs.go-task
+    pkgs.google-cloud-sdk
+    pkgs.gron
+    pkgs.grpcurl
+    pkgs.jq
+    pkgs.lazydocker
+    pkgs.lazygit
+    pkgs.less
     pkgs.nerd-fonts.jetbrains-mono
+    pkgs.nethack
+    pkgs.ripgrep
+    pkgs.tldr
   ];
 
   home.sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
-    PAGER = "bat";
+    PAGER = "less";
     MANPAGER = "nvim +Man!";
     LANG = "en_US.UTF-8";
   };
@@ -47,16 +55,36 @@
     macos-titlebar-style = transparent
   '';
 
+  home.file.".gemini/settings.json".text = ''
+    {
+      "general": {
+        "preferredEditor": "Neovim",
+        "vimMode": true,
+        "previewFeatures": true
+      },
+      "model": {
+        "name": "gemini-3-pro-preview"
+      },
+      "security": {
+        "auth": {
+          "selectedType": "oauth-personal"
+        }
+      }
+    }
+  '';
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  programs.fish = {
+  programs.zsh = {
     enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
     shellAliases = {
       ls = "eza --icons";
       ll = "eza -l --icons --git -a";
       lt = "eza --tree --level=2 --long --icons --git";
-      cat = "bat";
       g = "git";
       lg = "lazygit";
       ld = "lazydocker";
@@ -65,30 +93,53 @@
 
   programs.starship = {
     enable = true;
-    enableFishIntegration = true;
+    enableZshIntegration = true;
   };
 
   programs.eza = {
     enable = true;
-    enableFishIntegration = true;
+    enableZshIntegration = true;
   };
 
   programs.zoxide = {
     enable = true;
-    enableFishIntegration = true;
+    enableZshIntegration = true;
   };
 
   programs.fzf = {
     enable = true;
-    enableFishIntegration = true;
+    enableZshIntegration = true;
+    defaultCommand = "fd --type f";
+    fileWidgetCommand = "fd --type f";
+    changeDirWidgetCommand = "fd --type d";
+  };
+
+  programs.atuin = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.zellij = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
   programs.delta = {
     enable = true;
+    options = {
+      navigate = true;
+      line-numbers = true;
+    };
+  };
+
+  programs.gh = {
+    enable = true;
+    extensions = [pkgs.gh-dash];
   };
 
   programs.git = {
     enable = true;
+    lfs.enable = true;
     settings = {
       user = {
         name = "Woojong Koh";
@@ -96,6 +147,8 @@
       };
       init.defaultBranch = "main";
       pull.rebase = true;
+      core.pager = "delta";
+      interactive.diffFilter = "delta --color-only";
     };
   };
 
