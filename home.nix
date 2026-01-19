@@ -33,6 +33,7 @@
     pkgs.lazydocker
     pkgs.lazygit
     pkgs.less
+    pkgs.mosh
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.nethack
     pkgs.ripgrep
@@ -46,6 +47,8 @@
     PAGER = "less";
     MANPAGER = "nvim +Man!";
     LANG = "en_US.UTF-8";
+    GOOGLE_CLOUD_PROJECT = "docugpt-test";
+    GOOGLE_CLOUD_LOCATION = "global";
   };
 
   xdg.configFile."ghostty/config".text = ''
@@ -59,18 +62,17 @@
 
   home.file.".gemini/settings.json".text = ''
     {
+      "security": {
+        "auth": {
+          "selectedType": "vertex-ai"
+        }
+      },
       "general": {
-        "preferredEditor": "Neovim",
-        "vimMode": true,
-        "previewFeatures": true
+        "previewFeatures": true,
+        "preferredEditor": "neovim"
       },
       "model": {
         "name": "gemini-3-pro-preview"
-      },
-      "security": {
-        "auth": {
-          "selectedType": "oauth-personal"
-        }
       }
     }
   '';
@@ -135,14 +137,6 @@
   programs.yazi = {
     enable = true;
     enableZshIntegration = true;
-  };
-
-  programs.zellij = {
-    enable = true;
-    enableZshIntegration = true;
-    settings = {
-      show_startup_tips = false;
-    };
   };
 
   programs.delta = {
