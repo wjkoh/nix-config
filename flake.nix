@@ -41,6 +41,9 @@
           pkgs.alejandra
           pkgs.pre-commit
         ];
+        shellHook = ''
+          pre-commit install
+        '';
       };
     });
 
