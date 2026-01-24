@@ -1,12 +1,7 @@
 {
-  config,
   pkgs,
-  neovim,
   ...
 }: {
-  home.username = "wjkoh";
-  home.homeDirectory = "/Users/wjkoh";
-
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -17,7 +12,6 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   home.packages = [
-    neovim.packages.${pkgs.system}.default
     pkgs.bat
     pkgs.btop
     pkgs.curl
@@ -42,23 +36,11 @@
   ];
 
   home.sessionVariables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
     PAGER = "less";
-    MANPAGER = "nvim +Man!";
     LANG = "en_US.UTF-8";
     GOOGLE_CLOUD_PROJECT = "docugpt-test";
     GOOGLE_CLOUD_LOCATION = "global";
   };
-
-  xdg.configFile."ghostty/config".text = ''
-    theme = Catppuccin Mocha
-    font-family = JetBrainsMono Nerd Font Mono
-    font-size = 14
-    window-padding-x = 10
-    window-padding-y = 10
-    macos-titlebar-style = transparent
-  '';
 
   home.file.".gemini/settings.json".text = ''
     {
