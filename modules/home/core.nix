@@ -29,6 +29,7 @@
     pkgs.lazydocker
     pkgs.lazygit
     pkgs.less
+    pkgs.mosh
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.nethack
     pkgs.ripgrep
@@ -59,7 +60,8 @@
 
   home.file."GEMINI.md".text = ''
     Unless mentioned otherwise:
-    - Always explain or write a design doc before making code changes.
+    - For trivial changes, briefly explain the change.
+    - For complex or long changes, write a design doc before making code changes.
     - Before making code changes, create a new git branch.
     - Always ask for confirmation before changing files.
     - After creating commits on the git branch, create a pull request using the `gh` command.
@@ -68,8 +70,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  programs.mosh.enable = true;
 
   programs.zsh = {
     enable = true;
