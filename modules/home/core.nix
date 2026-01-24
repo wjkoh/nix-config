@@ -58,6 +58,14 @@
     }
   '';
 
+  home.file."GEMINI.md".text = ''
+    Unless mentioned otherwise:
+    - Always explain or write a design doc before making code changes.
+    - Before making code changes, create a new git branch.
+    - Always ask for confirmation before changing files.
+    - After creating commits on the git branch, create a pull request using the `gh` command.
+  '';
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
