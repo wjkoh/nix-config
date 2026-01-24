@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   xdg.configFile."ghostty/config".text = ''
     theme = Catppuccin Mocha
     font-family = JetBrainsMono Nerd Font Mono
