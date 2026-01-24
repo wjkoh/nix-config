@@ -73,3 +73,18 @@ nixos-rebuild switch --flake github:wjkoh/nix-config#z2-mini
 1.  **Single Source of Truth:** Change configuration once, propagate to all machines.
 2.  **Shared Lockfile:** Ensures identical tool versions across macOS and Linux.
 3.  **Atomic Updates:** On NixOS, system and user configs update synchronously.
+
+## 6. Post-Installation Steps
+
+After applying the configuration, some manual steps are required:
+
+### Tailscale
+*   **macOS (`mbp-14`):** Install Tailscale manually via the Mac App Store or as a standalone app.
+*   **NixOS (`z2-mini`):** Tailscale is managed as a system service. Run `sudo tailscale up` to authenticate.
+
+### Google Cloud SDK
+On both systems, you must authenticate manually to use `gcloud` and application default credentials:
+```bash
+gcloud auth login
+gcloud auth application-default login
+```
