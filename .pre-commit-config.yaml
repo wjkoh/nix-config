@@ -1,8 +1,11 @@
 repos:
-  - repo: https://github.com/kamadorueda/alejandra
-    rev: v3.0.0
+  - repo: local
     hooks:
       - id: alejandra
+        name: alejandra
+        entry: alejandra
+        language: system
+        files: \.nix$
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:
