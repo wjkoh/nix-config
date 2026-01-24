@@ -62,7 +62,10 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = {inherit inputs outputs neovim;};
+            home-manager.extraSpecialArgs = {
+              inherit inputs outputs neovim;
+              llamaCppPackage = nixpkgs.legacyPackages.x86_64-linux.llama-cpp.override {vulkanSupport = true;};
+            };
             home-manager.users.wjkoh = import ./hosts/z2-mini/home.nix;
           }
         ];
@@ -74,7 +77,10 @@
     homeConfigurations = {
       "wjkoh@mbp-14" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-        extraSpecialArgs = {inherit inputs outputs neovim;};
+        extraSpecialArgs = {
+          inherit inputs outputs neovim;
+          llamaCppPackage = nixpkgs.legacyPackages.aarch64-darwin.llama-cpp;
+        };
         modules = [
           ./hosts/mbp-14/home.nix
         ];
