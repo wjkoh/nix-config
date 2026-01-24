@@ -37,7 +37,10 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       default = pkgs.mkShell {
-        nativeBuildInputs = [pkgs.alejandra];
+        nativeBuildInputs = [
+          pkgs.alejandra
+          pkgs.pre-commit
+        ];
       };
     });
 
