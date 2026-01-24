@@ -50,28 +50,23 @@ The `flake.nix` produces two types of outputs:
 ## 4. Workflow
 
 ### Updating the MacBook (`mbp-14`)
+You can run Home Manager using `nix run` without installing the `home-manager` CLI tool globally.
+
 ```bash
+# From local source
 nix run home-manager/master -- switch --flake .#wjkoh@mbp-14
+
+# Directly from GitHub (useful for bootstrapping)
+nix run home-manager/master -- switch --flake github:wjkoh/nix-config#wjkoh@mbp-14
 ```
-*Note: The flake output for Home Manager usually follows `username@hostname` or just `username` depending on configuration. We will target `wjkoh` explicitly.*
 
 ### Updating the HP Z2 (`z2-mini`)
 ```bash
+# From local source
 nixos-rebuild switch --flake .#z2-mini
-```
 
-### Running Home Manager
-You can run Home Manager using `nix run` without installing the `home-manager` CLI tool globally.
-
-**Example 1: Running from local source**
-```bash
-nix run home-manager/master -- switch --flake .#wjkoh@mbp-14
-```
-
-**Example 2: Running directly from GitHub**
-This is useful for bootstrapping a new machine.
-```bash
-nix run home-manager/master -- switch --flake github:wjkoh/nix-config#wjkoh@mbp-14
+# Directly from GitHub
+nixos-rebuild switch --flake github:wjkoh/nix-config#z2-mini
 ```
 
 ## 5. Benefits
