@@ -29,7 +29,6 @@
     pkgs.lazydocker
     pkgs.lazygit
     pkgs.less
-    pkgs.mosh
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.nethack
     pkgs.ripgrep
@@ -68,6 +67,8 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.mosh.enable = true;
 
   programs.zsh = {
     enable = true;
