@@ -60,6 +60,20 @@ nix run home-manager/master -- switch --flake .#wjkoh@mbp-14
 nixos-rebuild switch --flake .#z2-mini
 ```
 
+### Running Home Manager
+You can run Home Manager using `nix run` without installing the `home-manager` CLI tool globally.
+
+**Example 1: Running from local source**
+```bash
+nix run home-manager/master -- switch --flake .#wjkoh@mbp-14
+```
+
+**Example 2: Running directly from GitHub**
+This is useful for bootstrapping a new machine.
+```bash
+nix run home-manager/master -- switch --flake github:wjkoh/nix-config#wjkoh@mbp-14
+```
+
 ## 5. Benefits
 1.  **Single Source of Truth:** Change configuration once, propagate to all machines.
 2.  **Shared Lockfile:** Ensures identical tool versions across macOS and Linux.
