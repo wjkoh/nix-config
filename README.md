@@ -13,6 +13,8 @@ This repository uses a modular structure to maximize code reuse:
 
 ```text
 .
+├── .envrc                   # Direnv configuration (auto-loads dev shell)
+├── .pre-commit-config.yaml  # Code formatting and linting rules
 ├── flake.nix                # Entry point for all systems
 ├── flake.lock
 ├── modules/
@@ -26,7 +28,8 @@ This repository uses a modular structure to maximize code reuse:
 │   │   └── home.nix         # macOS-specific home overrides
 │   └── z2-mini/             # NixOS specific configs (HP Z2 Mini G1a)
 │       ├── configuration.nix# System-level config
-│       └── hardware-configuration.nix
+│       ├── hardware-configuration.nix
+│       └── home.nix         # NixOS-specific home overrides
 ```
 
 ## 3. Architecture & Implementation
