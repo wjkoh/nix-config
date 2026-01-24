@@ -54,19 +54,19 @@ You can run Home Manager using `nix run` without installing the `home-manager` C
 
 ```bash
 # From local source
-nix run home-manager/master -- switch --flake .#wjkoh@mbp-14
+$ nix run home-manager/master -- switch --flake .#wjkoh@mbp-14
 
 # Directly from GitHub (useful for bootstrapping)
-nix run home-manager/master -- switch --flake github:wjkoh/nix-config#wjkoh@mbp-14
+$ nix run home-manager/master -- switch --flake github:wjkoh/nix-config#wjkoh@mbp-14
 ```
 
 ### Updating the HP Z2 (`z2-mini`)
 ```bash
 # From local source
-nixos-rebuild switch --flake .#z2-mini
+# nixos-rebuild switch --flake .#z2-mini
 
 # Directly from GitHub
-nixos-rebuild switch --flake github:wjkoh/nix-config#z2-mini
+# nixos-rebuild switch --flake github:wjkoh/nix-config#z2-mini
 ```
 
 ## 5. Benefits
@@ -85,6 +85,6 @@ After applying the configuration, some manual steps are required:
 ### Google Cloud SDK
 On both systems, you must authenticate manually to use `gcloud` and application default credentials:
 ```bash
-gcloud auth login
-gcloud auth application-default login
+$ gcloud auth login
+$ gcloud auth application-default login
 ```
