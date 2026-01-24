@@ -1,11 +1,11 @@
 repos:
   - repo: local
     hooks:
-      - id: alejandra
-        name: alejandra
-        entry: alejandra
+      - id: nix-fmt
+        name: nix fmt
+        entry: nix fmt .
         language: system
-        files: \.nix$
+        pass_filenames: false
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:
