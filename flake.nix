@@ -22,7 +22,25 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
+    systems = [
+      "aarch64-linux"
+      "i686-linux"
+      "x86_64-linux"
+      "aarch64-darwin"
+      "x86_64-darwin"
+    ];
+    forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
+    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+
+    devShells = forAllSystems (system: let
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
+      default = pkgs.mkShell {
+        nativeBuildInputs = [pkgs.alejandra];
+      };
+    });
+
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#z2-mini'
     nixosConfigurations = {
@@ -32,7 +50,7 @@
         modules = [
           # Main NixOS configuration file
           ./hosts/z2-mini/configuration.nix
-          
+
           # Home Manager module
           home-manager.nixosModules.home-manager
           {
