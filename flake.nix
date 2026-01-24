@@ -54,6 +54,9 @@
           # Main NixOS configuration file
           ./hosts/z2-mini/configuration.nix
 
+          # Enable unfree packages
+          {nixpkgs.config.allowUnfree = true;}
+
           # Home Manager module
           home-manager.nixosModules.home-manager
           {
@@ -73,7 +76,10 @@
     # Available through 'home-manager --flake .#wjkoh@mbp-14'
     homeConfigurations = {
       "wjkoh@mbp-14" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+        pkgs = import nixpkgs {
+          system = "aarch64-darwin";
+          config.allowUnfree = true;
+        };
         extraSpecialArgs = {
           inherit inputs outputs neovim;
           llamaCppPackage = nixpkgs.legacyPackages.aarch64-darwin.llama-cpp;
