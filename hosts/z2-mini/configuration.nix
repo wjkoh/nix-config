@@ -11,6 +11,12 @@
     ./hardware-configuration.nix
   ];
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      btop = prev.btop.override {rocmSupport = true;};
+    })
+  ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -101,6 +107,8 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
+    rocmPackages.rocm-smi
+    radeontop
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
