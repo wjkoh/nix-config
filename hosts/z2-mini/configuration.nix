@@ -85,7 +85,7 @@
   users.users.wjkoh = {
     isNormalUser = true;
     description = "Woojong Koh";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
     shell = pkgs.zsh;
     packages = with pkgs; [
       #  thunderbird
@@ -115,6 +115,9 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  # Enable Docker
+  virtualisation.docker.enable = true;
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [22 8080];

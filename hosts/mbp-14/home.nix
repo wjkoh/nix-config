@@ -3,4 +3,9 @@
 
   home.username = "wjkoh";
   home.homeDirectory = "/Users/wjkoh";
+
+  home.packages = with pkgs; [
+    docker
+    colima
+  ];
 }
