@@ -21,6 +21,7 @@
     pkgs.fx
     pkgs.gemini-cli
     pkgs.git
+    pkgs.glow
     pkgs.go-task
     pkgs.google-cloud-sdk
     pkgs.gron
