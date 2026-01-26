@@ -106,7 +106,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     rocmPackages.rocm-smi
-    radeontop
+    rocmPackages.amdsmi
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
