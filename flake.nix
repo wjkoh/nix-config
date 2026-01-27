@@ -37,6 +37,7 @@
         nativeBuildInputs = [
           pkgs.alejandra
           pkgs.pre-commit
+          pkgs.go-task
         ];
         shellHook = ''
           pre-commit install
