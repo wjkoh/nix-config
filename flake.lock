@@ -104,11 +104,11 @@
         "nvf": "nvf"
       },
       "locked": {
-        "lastModified": 1769231557,
-        "narHash": "sha256-BwiJ2mwQS2I7DBmkhWl1ghvxgFuT5mgfo5r2qPj1Amo=",
+        "lastModified": 1769485338,
+        "narHash": "sha256-/hvsmkvm0x/S4Mv2Ljbm36Ky0EeICsJ9Li4CXplDGNQ=",
         "owner": "wjkoh",
         "repo": "neovim",
-        "rev": "10051b88b6698e3e6ff7f5db6cf52fc0d34236ed",
+        "rev": "31610052cf51b13a8a5e2ed2a3d44dcd46c0f810",
         "type": "github"
       },
       "original": {
