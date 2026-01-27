@@ -34,6 +34,7 @@
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.nethack
     pkgs.ripgrep
+    pkgs.sshfs
     pkgs.tldr
     pkgs.yq-go
   ];

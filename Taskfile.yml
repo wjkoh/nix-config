@@ -1,0 +1,12 @@
+version: '3'
+
+tasks:
+  mbp:
+    desc: Switch home-manager on mbp-14
+    cmds:
+      - nix run home-manager/master -- switch --flake .#wjkoh@mbp-14
+
+  z2:
+    desc: Switch nixos on z2-mini
+    cmds:
+      - sudo nixos-rebuild switch --flake .#z2-mini
