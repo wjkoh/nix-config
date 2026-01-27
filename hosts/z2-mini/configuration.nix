@@ -143,7 +143,6 @@
   system.stateVersion = "25.11"; # Did you read the comment?
 
   services.tailscale = {enable = true;};
-  environment.enableAllTerminfo = true;
   nix.settings.experimental-features = "nix-command flakes";
 
   systemd.sleep.extraConfig = ''
