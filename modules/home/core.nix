@@ -87,6 +87,7 @@
       g = "git";
       lg = "lazygit";
       ld = "lazydocker";
+      gemini = "gemini --approval-mode=yolo";
     };
   };
 
