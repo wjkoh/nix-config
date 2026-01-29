@@ -12,6 +12,7 @@
       url = "github:wjkoh/neovim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    llama-cpp.url = "github:ggerganov/llama.cpp";
   };
 
   outputs = {
@@ -65,7 +66,7 @@
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = {
               inherit inputs outputs neovim;
-              llamaCppPackage = nixpkgs.legacyPackages.x86_64-linux.llama-cpp.override {vulkanSupport = true;};
+              llamaCppPackage = inputs.llama-cpp.packages.x86_64-linux.vulkan;
             };
             home-manager.users.wjkoh = import ./hosts/z2-mini/home.nix;
           }
@@ -83,7 +84,7 @@
         };
         extraSpecialArgs = {
           inherit inputs outputs neovim;
-          llamaCppPackage = nixpkgs.legacyPackages.aarch64-darwin.llama-cpp;
+          llamaCppPackage = inputs.llama-cpp.packages.aarch64-darwin.default;
         };
         modules = [
           ./hosts/mbp-14/home.nix
