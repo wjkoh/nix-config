@@ -10,3 +10,8 @@ tasks:
     desc: Switch nixos on z2-mini
     cmds:
       - sudo nixos-rebuild switch --flake .#z2-mini
+
+  update:
+    desc: Update nix flake
+    cmds:
+      - nix flake update
