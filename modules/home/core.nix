@@ -68,6 +68,7 @@
     - Always ask for confirmation before changing files.
     - After creating commits on the git branch, create a pull request using the `gh` command.
     - Always format code using `nix fmt .` (not `nix fmt`, which formats stdin).
+    - Do not merge pull requests yourself. The user always merges PRs.
   '';
 
   # Let Home Manager install and manage itself.
