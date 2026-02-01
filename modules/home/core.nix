@@ -83,16 +83,6 @@
       "*" = {
         addKeysToAgent = "yes";
       };
-      "z2-mini" = {
-        hostname = "z2-mini";
-        user = "wjkoh";
-        identityFile = [
-          "~/.ssh/id_yubikey_nano113"
-        ];
-        extraOptions = {
-          IdentityAgent = "none";
-        };
-      };
     };
   };
 
