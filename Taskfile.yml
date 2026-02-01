@@ -9,9 +9,27 @@ tasks:
   z2:
     desc: Switch nixos on z2-mini
     cmds:
-      - sudo nixos-rebuild switch --flake .#z2-mini
+      - nixos-rebuild switch --flake .#z2-mini --target-host wjkoh@z2-mini --use-remote-sudo
 
   update:
     desc: Update nix flake
     cmds:
       - nix flake update
+
+  ssh:
+    desc: SSH into z2-mini
+    cmds:
+      - ssh z2-mini
+
+  yubikey-generate:
+    desc: Generate a new resident SSH key (usage; task yubikey-generate NAME=id_yubikey_1)
+    vars:
+      NAME: '{{.NAME | default "id_yubikey_1"}}'
+    cmds:
+      - ssh-keygen -t ed25519-sk -O resident -O application=ssh:wjkoh -O verify-required -f ~/.ssh/{{.NAME}}
+
+  yubikey-recover:
+    desc: Recover resident keys from YubiKey to current dir
+    cmds:
+      - ssh-keygen -K
+      - echo "Keys recovered. Please rename id_ed25519_sk to your preferred name (e.g., ~/.ssh/id_yubikey_1)"
