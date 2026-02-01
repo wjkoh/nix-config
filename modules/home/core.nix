@@ -89,6 +89,9 @@
         identityFile = [
           "~/.ssh/id_yubikey_nano113"
         ];
+        extraOptions = {
+          IdentityAgent = "none";
+        };
       };
     };
   };

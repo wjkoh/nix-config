@@ -73,6 +73,10 @@ programs.ssh = {
         "~/.ssh/id_yubikey_1"
         "~/.ssh/id_yubikey_2"
       ];
+      # Bypass SSH agent to avoid "agent refused operation"
+      extraOptions = {
+        IdentityAgent = "none";
+      };
     };
   };
 };
@@ -89,7 +93,46 @@ task yubikey-recover NAME=id_yubikey_1
 
 Repeat for your backup keys with different names.
 
-## 7. Security Note: What to Commit?
+## 6. Taskfile Commands
+
+*   `task ssh`: SSH into z2-mini.
+*   `task yubikey-generate NAME=id_yubikey_1`: Generate a new key.
+*   `task yubikey-recover NAME=id_yubikey_1`: Recover a key from the physical YubiKey.
+
+## 7. Troubleshooting & Known Issues
+
+### 7.1. "agent refused operation" Error
+
+**Symptoms:**
+When trying to SSH, you get:
+```
+sign_and_send_pubkey: signing failed for ED25519-SK "/Users/.../id_yubikey_..." from agent: agent refused operation
+```
+
+**Cause:**
+The macOS `ssh-agent` or other running agents often fail to handle FIDO/U2F keys correctly or get into a stale state, especially after the YubiKey is re-plugged.
+
+**Fix:**
+Bypass the SSH agent for the specific host by setting `IdentityAgent none` in `~/.ssh/config` (or your Nix configuration).
+```nix
+extraOptions = {
+  IdentityAgent = "none";
+};
+```
+
+### 7.2. Mosh: "Confirm user presence" Prompt Missing
+
+**Symptoms:**
+When connecting via `mosh`, the process hangs at the authentication step. No message appears asking you to touch the YubiKey.
+
+**Cause:**
+Mosh buffers the output differently than SSH, and the "Touch YubiKey" prompt (printed by the underlying `ssh` process) is often hidden or suppressed.
+
+**Workaround:**
+*   **Just Touch It:** If Mosh hangs during connection, touch your YubiKey. It is waiting for input even if it doesn't say so.
+*   **Use SSH First:** Connect once with `ssh` to ensure keys are working, then use `mosh`.
+
+## 8. Security Note: What to Commit?
 
 *   **Public Keys (`.pub` files):** ✅ **SAFE**.
     *   You **SHOULD** commit these to your repo (e.g., in `configuration.nix`). They act like a lock; showing the lock is safe.
@@ -99,9 +142,3 @@ Repeat for your backup keys with different names.
     *   **DO NOT** commit these (`~/.ssh/id_yubikey_1`).
     *   Even though they don't contain the actual secret (which is on the hardware YubiKey), they are useless to others and should be treated as private credentials.
     *   Ensure your `.gitignore` excludes them (usually standard practice).
-
-## 6. Taskfile Commands
-
-*   `task ssh`: SSH into z2-mini.
-*   `task yubikey-generate NAME=id_yubikey_1`: Generate a new key.
-*   `task yubikey-recover NAME=id_yubikey_1`: Recover a key from the physical YubiKey.
