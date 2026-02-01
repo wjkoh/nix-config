@@ -28,6 +28,7 @@
     pkgs.jq
     pkgs.lazydocker
     pkgs.lazygit
+    pkgs.lazysql
     pkgs.less
     pkgs.libfido2
     pkgs.mosh
