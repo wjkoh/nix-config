@@ -17,18 +17,18 @@ We will generate "resident keys". This stores the key handle and metadata direct
 Run the following for your **Primary** YubiKey:
 (Plug in Primary YubiKey)
 ```bash
-ssh-keygen -t ed25519-sk -O resident -O application=ssh:wjkoh -O verify-required -f ~/.ssh/id_yubikey_1
+ssh-keygen -t ed25519-sk -O resident -O application=ssh:wjkoh -f ~/.ssh/id_yubikey_1
 ```
 
 Run the following for your **Backup** YubiKey:
 (Plug in Backup YubiKey)
 ```bash
-ssh-keygen -t ed25519-sk -O resident -O application=ssh:wjkoh -O verify-required -f ~/.ssh/id_yubikey_2
+ssh-keygen -t ed25519-sk -O resident -O application=ssh:wjkoh -f ~/.ssh/id_yubikey_2
 ```
 
 *   `-t ed25519-sk`: Use the FIDO2 algorithm.
 *   `-O resident`: Store the key on the YubiKey (allows recovery).
-*   `-O verify-required`: Require a PIN or biometric verification.
+*   (Optional) `-O verify-required`: Add this flag if you want to require a PIN/Biometrics (User Verification). Without it, only User Presence (Touch) is required.
 
 ### Step 2.2: Get Public Keys
 
