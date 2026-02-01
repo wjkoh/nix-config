@@ -142,3 +142,41 @@ Mosh buffers the output differently than SSH, and the "Touch YubiKey" prompt (pr
     *   **DO NOT** commit these (`~/.ssh/id_yubikey_1`).
     *   Even though they don't contain the actual secret (which is on the hardware YubiKey), they are useless to others and should be treated as private credentials.
     *   Ensure your `.gitignore` excludes them (usually standard practice).
+
+## 9. Sudo with YubiKey (NixOS)
+
+You can use your YubiKey to authorize `sudo` commands on `z2-mini` instead of typing your password. We use `pam_u2f` for this.
+
+### 9.1. Generate Configuration (On macOS)
+
+Since `z2-mini` is remote, you can generate the configuration on your Mac. You must specify the **origin** (`pam://hostname`) so the YubiKey knows which machine asks for the credential.
+
+1.  Plug in your YubiKey.
+2.  Run the following (replace `z2-mini` with your actual hostname if different):
+
+    ```bash
+    nix shell nixpkgs#pam_u2f -c "pamu2fcfg -o pam://z2-mini"
+    ```
+
+3.  Touch your YubiKey when it blinks.
+4.  Copy the output (starts with `username:...`).
+
+### 9.2. Apply to NixOS
+
+In `hosts/z2-mini/configuration.nix`, enable `pam.u2f` and add the config:
+
+```nix
+security.pam.u2f = {
+  enable = true;
+  settings = {
+    # Set to true to effectively disable password login if YubiKey is present.
+    # We recommend false initially to allow fallback to password.
+    cue = true;  # Tell user to touch the device
+    origin = "pam://z2-mini";
+  };
+  # Map username to the key string you generated
+  authFile = pkgs.writeText "u2f-mappings" ''
+    wjkoh:long-string-from-step-9.1...
+  '';
+};
+```

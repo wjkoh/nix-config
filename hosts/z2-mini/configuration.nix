@@ -133,6 +133,19 @@
       KbdInteractiveAuthentication = false;
     };
   };
+
+  security.pam.u2f = {
+    enable = true;
+    settings = {
+      cue = true; # Tell user to touch the device
+      origin = "pam://z2-mini";
+    };
+    # Map username to the key string
+    authFile = pkgs.writeText "u2f-mappings" ''
+      wjkoh:7WItV2Np4n0YbtpanbSF6D5SesrD3ATIxeSvgKL8csUXNZRLGkzMgg8e1BwBGwed0mit6UABcB+Y4bJPlxpo9Q==,BWArzeBYpUFVC9MjqM6xfGOoPqAdMEKU1LoJnH3SaetTqHhoQIGW60H4maCnXiXTlHyHR6IqWkEce1qlvOghHQ==,es256,+presence
+    '';
+  };
+
   services.pcscd.enable = true;
 
   # Open ports in the firewall.
