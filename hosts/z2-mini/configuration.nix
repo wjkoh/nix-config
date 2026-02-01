@@ -97,6 +97,7 @@
       "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIF78TmHCCGaDI0mChwtkC8lw4ibdQWJB+UfUvE6MY3AdAAAACXNzaDp3amtvaA== wjkoh@mbp-14" # Nano113
       "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIHoPkScwCuLSBbPGZO2clXnkRb6iMvoFKT8u5CggGus+AAAACXNzaDp3amtvaA== wjkoh@mbp-14" # NFC056
       "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIKb7bOcg0TqC3CUUVgZlhK5Ge2z38feSLmjgnKosiKGxAAAACXNzaDp3amtvaA== wjkoh@mbp-14" # NFC836
+      "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOFRXodl3PT5BxR+OkrnCNF/FnW0ODt2VbWsInwW3JkvKKwwfubDd+c1RLcCWcvHRXnSJS84RUs3hdlohwiVYGg= wjkoh@iphone-17" # iPhone17
     ];
     packages = with pkgs; [
       #  thunderbird
