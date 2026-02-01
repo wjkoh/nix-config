@@ -97,6 +97,7 @@
       # TODO: Replace with your actual YubiKey public keys
       # "sk-ssh-ed25519@openssh.com AAAAGn..." # Primary YubiKey
       # "sk-ssh-ed25519@openssh.com AAAAGn..." # Backup YubiKey
+      "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIF78TmHCCGaDI0mChwtkC8lw4ibdQWJB+UfUvE6MY3AdAAAACXNzaDp3amtvaA== wjkoh@macbook-pro"
     ];
     packages = with pkgs; [
       #  thunderbird
