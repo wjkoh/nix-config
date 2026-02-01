@@ -9,7 +9,7 @@ tasks:
   z2:
     desc: Switch nixos on z2-mini
     cmds:
-      - nixos-rebuild switch --flake .#z2-mini --target-host wjkoh@z2-mini --use-remote-sudo
+      - sudo nixos-rebuild switch --flake .#z2-mini
 
   update:
     desc: Update nix flake
