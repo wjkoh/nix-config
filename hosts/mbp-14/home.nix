@@ -13,6 +13,7 @@
         user = "wjkoh";
         identityFile = [
           "~/.ssh/id_yubikey_nano113"
+          "~/.ssh/id_yubikey_nfc836"
         ];
         extraOptions = {
           IdentityAgent = "none";
