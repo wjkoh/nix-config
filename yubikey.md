@@ -82,13 +82,14 @@ programs.ssh = {
 If you format your MacBook, install Nix and Home Manager, then plug in a YubiKey and run:
 
 ```bash
-# Downloads key stub for the plugged-in YubiKey
-ssh-keygen -K
+# Downloads key stub for the plugged-in YubiKey to ~/.ssh/id_yubikey_1
+task yubikey-recover NAME=id_yubikey_1
 ```
 
-Rename the resulting `id_ed25519_sk` file to match your naming convention (e.g., `id_yubikey_1` or `id_yubikey_2`).
+Repeat for your backup keys with different names.
 
 ## 6. Taskfile Commands
 
 *   `task ssh`: SSH into z2-mini.
-*   `task yubikey-generate NAME=id_yubikey_3`: Generate a new key with a specific name.
+*   `task yubikey-generate NAME=id_yubikey_1`: Generate a new key.
+*   `task yubikey-recover NAME=id_yubikey_1`: Recover a key from the physical YubiKey.

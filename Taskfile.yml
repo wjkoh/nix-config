@@ -29,7 +29,13 @@ tasks:
       - ssh-keygen -t ed25519-sk -O resident -O application=ssh:wjkoh -O verify-required -f ~/.ssh/{{.NAME}}
 
   yubikey-recover:
-    desc: Recover resident keys from YubiKey to current dir
+    desc: Recover resident keys from YubiKey (usage; task yubikey-recover NAME=id_yubikey_1)
+    vars:
+      NAME: '{{.NAME | default "id_yubikey_recover"}}'
     cmds:
-      - ssh-keygen -K
-      - echo "Keys recovered. Please rename id_ed25519_sk to your preferred name (e.g., ~/.ssh/id_yubikey_1)"
+      - mkdir -p ~/.ssh
+      - cd /tmp && ssh-keygen -K
+      - mv /tmp/id_ed25519_sk ~/.ssh/{{.NAME}}
+      - mv /tmp/id_ed25519_sk.pub ~/.ssh/{{.NAME}}.pub
+      - chmod 600 ~/.ssh/{{.NAME}}
+      - echo "Key recovered to ~/.ssh/{{.NAME}}"
