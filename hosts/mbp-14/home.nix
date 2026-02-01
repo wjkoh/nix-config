@@ -4,15 +4,22 @@
   home.username = "wjkoh";
   home.homeDirectory = "/Users/wjkoh";
 
-  programs.ssh.matchBlocks = {
-    "z2-mini" = {
-      hostname = "z2-mini";
-      user = "wjkoh";
-      identityFile = [
-        "~/.ssh/id_yubikey_nano113"
-      ];
-      extraOptions = {
-        IdentityAgent = "none";
+  programs.ssh = {
+    enable = true;
+    enableDefaultConfig = false;
+    matchBlocks = {
+      "*" = {
+        addKeysToAgent = "yes";
+      };
+      "z2-mini" = {
+        hostname = "z2-mini";
+        user = "wjkoh";
+        identityFile = [
+          "~/.ssh/id_yubikey_nano113"
+        ];
+        extraOptions = {
+          IdentityAgent = "none";
+        };
       };
     };
   };
