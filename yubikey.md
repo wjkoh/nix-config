@@ -88,6 +88,17 @@ task yubikey-recover NAME=id_yubikey_1
 
 Repeat for your backup keys with different names.
 
+## 7. Security Note: What to Commit?
+
+*   **Public Keys (`.pub` files):** ✅ **SAFE**.
+    *   You **SHOULD** commit these to your repo (e.g., in `configuration.nix`). They act like a lock; showing the lock is safe.
+    *   Example: `sk-ssh-ed25519@openssh.com AAAAGn...`
+
+*   **Private Key Stubs (files with no extension):** ❌ **PRIVATE**.
+    *   **DO NOT** commit these (`~/.ssh/id_yubikey_1`).
+    *   Even though they don't contain the actual secret (which is on the hardware YubiKey), they are useless to others and should be treated as private credentials.
+    *   Ensure your `.gitignore` excludes them (usually standard practice).
+
 ## 6. Taskfile Commands
 
 *   `task ssh`: SSH into z2-mini.
