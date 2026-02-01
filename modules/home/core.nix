@@ -87,8 +87,7 @@
         hostname = "z2-mini";
         user = "wjkoh";
         identityFile = [
-          "~/.ssh/id_yubikey_1"
-          "~/.ssh/id_yubikey_2"
+          "~/.ssh/id_yubikey_nano113"
         ];
       };
     };
