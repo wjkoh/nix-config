@@ -33,6 +33,7 @@ tasks:
     vars:
       NAME: '{{.NAME | default "id_yubikey_recover"}}'
     cmds:
+      - echo "NOTE: If you have multiple resident keys, ssh-keygen may create files with suffixes (e.g., id_ed25519_sk_rk_...). Check output if rename fails."
       - mkdir -p ~/.ssh
       - cd /tmp && ssh-keygen -K
       - mv /tmp/id_ed25519_sk ~/.ssh/{{.NAME}}
