@@ -56,7 +56,7 @@ The `flake.nix` produces two types of outputs:
 
 ## 5. Workflow
 
-### Updating the MacBook (`mbp-14`)
+### Updating mbp-14 (MacBook Pro)
 You can run Home Manager using `nix run` without installing the `home-manager` CLI tool globally.
 
 ```bash
@@ -67,7 +67,7 @@ $ nix run home-manager/master -- switch --flake .#wjkoh@mbp-14
 $ nix run home-manager/master -- switch --flake github:wjkoh/nix-config#wjkoh@mbp-14
 ```
 
-### Updating the HP Z2 (`z2-mini`)
+### Updating z2-mini (HP Z2 Mini)
 ```bash
 # From local source
 # nixos-rebuild switch --flake .#z2-mini
