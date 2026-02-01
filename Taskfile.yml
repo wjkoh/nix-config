@@ -26,7 +26,7 @@ tasks:
     vars:
       NAME: '{{.NAME | default "id_yubikey_1"}}'
     cmds:
-      - ssh-keygen -t ed25519-sk -O resident -O application=ssh:wjkoh -f ~/.ssh/{{.NAME}}
+      - ssh-keygen -t ed25519-sk -O resident -O application=ssh:wjkoh -N "" -f ~/.ssh/{{.NAME}}
 
   yubikey-recover:
     desc: Recover resident keys from YubiKey (usage; task yubikey-recover NAME=id_yubikey_1)
