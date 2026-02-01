@@ -50,7 +50,11 @@ The `flake.nix` produces two types of outputs:
 *   **`modules/home/core.nix`**: Contains the bulk of user configuration (Packages, Shells, Git, etc.).
 *   **Host Specifics**: `home.username` and `home.homeDirectory` are defined in `hosts/<machine>/home.nix` to allow portability.
 
-## 4. Workflow
+## 4. Security & Authentication
+
+*   **[YubiKey SSH Guide](yubikey.md)**: Instructions for setting up FIDO2-based SSH authentication for passwordless, secure access to remote machines.
+
+## 5. Workflow
 
 ### Updating the MacBook (`mbp-14`)
 You can run Home Manager using `nix run` without installing the `home-manager` CLI tool globally.
