@@ -1,6 +1,6 @@
 # YubiKey SSH Setup (The Nix Way)
 
-This guide explains how to configure YubiKey-based SSH authentication between a MacBook Pro (macOS + Nix) and a remote NixOS machine (`z2-mini`). We use **FIDO2 Resident Keys** (ed25519-sk) for a modern, secure, and recoverable setup. This setup supports **multiple YubiKeys** (e.g., primary and backup).
+This guide explains how to configure YubiKey-based SSH authentication between a MacBook Pro (`mbp-14`) and a remote NixOS machine (`z2-mini`). We use **FIDO2 Resident Keys** (ed25519-sk) for a modern, secure, and recoverable setup. This setup supports **multiple YubiKeys** (e.g., primary and backup).
 
 ## 1. Prerequisites
 
@@ -8,7 +8,7 @@ This guide explains how to configure YubiKey-based SSH authentication between a 
 *   OpenSSH 8.2+ (standard on recent macOS and NixOS).
 *   `z2-mini` accessible via network (e.g., Tailscale).
 
-## 2. Setup (On MacBook Pro)
+## 2. Setup (On mbp-14)
 
 We will generate "resident keys". This stores the key handle and metadata directly on each YubiKey.
 
@@ -84,7 +84,7 @@ programs.ssh = {
 
 ## 5. Recovery (After Formatting)
 
-If you format your MacBook, install Nix and Home Manager, then plug in a YubiKey and run:
+If you format your `mbp-14`, install Nix and Home Manager, then plug in a YubiKey and run:
 
 ```bash
 # Downloads key stub for the plugged-in YubiKey to ~/.ssh/id_yubikey_1
