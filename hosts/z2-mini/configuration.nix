@@ -97,7 +97,8 @@
       # TODO: Replace with your actual YubiKey public keys
       # "sk-ssh-ed25519@openssh.com AAAAGn..." # Primary YubiKey
       # "sk-ssh-ed25519@openssh.com AAAAGn..." # Backup YubiKey
-      "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIF78TmHCCGaDI0mChwtkC8lw4ibdQWJB+UfUvE6MY3AdAAAACXNzaDp3amtvaA== wjkoh@mbp-14"
+      "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIF78TmHCCGaDI0mChwtkC8lw4ibdQWJB+UfUvE6MY3AdAAAACXNzaDp3amtvaA== wjkoh@mbp-14" # Nano113
+      "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIKb7bOcg0TqC3CUUVgZlhK5Ge2z38feSLmjgnKosiKGxAAAACXNzaDp3amtvaA== wjkoh@mbp-14" # NFC836
     ];
     packages = with pkgs; [
       #  thunderbird
