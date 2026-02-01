@@ -8,9 +8,6 @@
     enable = true;
     enableDefaultConfig = false;
     matchBlocks = {
-      "*" = {
-        addKeysToAgent = "yes";
-      };
       "z2-mini" = {
         hostname = "z2-mini";
         user = "wjkoh";
