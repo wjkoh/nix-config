@@ -93,6 +93,11 @@
     description = "Woojong Koh";
     extraGroups = ["networkmanager" "wheel"];
     shell = pkgs.zsh;
+    openssh.authorizedKeys.keys = [
+      # TODO: Replace with your actual YubiKey public keys
+      # "sk-ssh-ed25519@openssh.com AAAAGn..." # Primary YubiKey
+      # "sk-ssh-ed25519@openssh.com AAAAGn..." # Backup YubiKey
+    ];
     packages = with pkgs; [
       #  thunderbird
     ];

@@ -73,6 +73,21 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  programs.ssh = {
+    enable = true;
+    addKeysToAgent = "yes";
+    matchBlocks = {
+      "z2-mini" = {
+        hostname = "z2-mini";
+        user = "wjkoh";
+        identityFile = [
+          "~/.ssh/id_yubikey_1"
+          "~/.ssh/id_yubikey_2"
+        ];
+      };
+    };
+  };
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
