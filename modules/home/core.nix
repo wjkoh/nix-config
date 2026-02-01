@@ -78,8 +78,10 @@
 
   programs.ssh = {
     enable = true;
-    addKeysToAgent = "yes";
     matchBlocks = {
+      "*" = {
+        addKeysToAgent = "yes";
+      };
       "z2-mini" = {
         hostname = "z2-mini";
         user = "wjkoh";
