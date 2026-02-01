@@ -3,6 +3,12 @@
 ## 1. Overview
 The goal of this repository is to manage distinct systems using a single Git repository and Flake:
 1.  **MacBook Pro 14 (macOS):** Hostname `mbp-14`. Uses Home Manager (standalone) to manage user tools and dotfiles.
+    > **Setup:** To set the hostname on macOS, run:
+    > ```bash
+    > sudo scutil --set ComputerName "mbp-14"
+    > sudo scutil --set LocalHostName "mbp-14"
+    > sudo scutil --set HostName "mbp-14"
+    > ```
 2.  **HP Z2 Mini G1a (NixOS):** Hostname `z2-mini`. Uses NixOS for system configuration and Home Manager (as a module) for user configuration.
 
 **Key Philosophy:** "Write once, run everywhere" for user tools (Neovim, Zsh, Git, etc.), while keeping system-specific configurations (disk mounts, networking, macOS settings) separate.
@@ -76,12 +82,12 @@ $ nix run home-manager/master -- switch --flake github:wjkoh/nix-config#wjkoh@mb
 # nixos-rebuild switch --flake github:wjkoh/nix-config#z2-mini
 ```
 
-## 5. Benefits
+## 6. Benefits
 1.  **Single Source of Truth:** Change configuration once, propagate to all machines.
 2.  **Shared Lockfile:** Ensures identical tool versions across macOS and Linux.
 3.  **Atomic Updates:** On NixOS, system and user configs update synchronously.
 
-## 6. Post-Installation Steps
+## 7. Post-Installation Steps
 
 After applying the configuration, some manual steps are required:
 
