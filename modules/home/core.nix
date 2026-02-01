@@ -29,12 +29,15 @@
     pkgs.lazydocker
     pkgs.lazygit
     pkgs.less
+    pkgs.libfido2
     pkgs.mosh
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.nethack
+    pkgs.openssh
     pkgs.ripgrep
     pkgs.sshfs
     pkgs.tldr
+    pkgs.yubikey-manager
     pkgs.yq-go
   ];
 
