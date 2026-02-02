@@ -23,6 +23,7 @@
       ShowPathbar = true;
       FXDefaultSearchScope = "SCcf";
       _FXShowPosixPathInTitle = true;
+      _FXSortFoldersFirst = true;
     };
     loginwindow.LoginwindowText = "If you found this computer, please contact wjngkoh@gmail.com. Reward available.";
     NSGlobalDomain = {
