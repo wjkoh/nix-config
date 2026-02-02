@@ -46,10 +46,25 @@
     onActivation.autoUpdate = true;
     casks = [
       "ghostty"
+      "google-chrome"
+      "netnewswire"
+      "postman"
+      "ridibooks"
+      "steam"
+      "slack"
+      "telegram"
+      "trezor-suite"
+      "yubico-authenticator"
+      "zoom"
     ];
     masApps = {
       "Bitwarden" = 1352778147;
       "Tailscale" = 1475387142;
+      "GoodLinks" = 1474335294;
+      "iA Writer" = 775737590;
+      "KakaoTalk" = 869223134;
+      "Amazon Kindle" = 302584613;
+      "Xcode" = 497799835;
     };
   };
 }
