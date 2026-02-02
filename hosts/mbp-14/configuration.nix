@@ -61,7 +61,6 @@
       "KakaoTalk" = 869223134;
       "Amazon Kindle" = 302584613;
       "Xcode" = 497799835;
-      "Ridi" = 338813698;
       "Slack" = 803453959;
       "Telegram" = 747648890;
       "Yubico Authenticator" = 1497506650;
