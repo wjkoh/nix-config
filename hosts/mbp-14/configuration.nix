@@ -28,6 +28,10 @@
         "/Applications/iA Writer.app"
         "/System/Applications/System Settings.app"
       ];
+      wvous-tl-corner = 1;
+      wvous-tr-corner = 1;
+      wvous-bl-corner = 13;
+      wvous-br-corner = 2;
     };
     finder = {
       AppleShowAllExtensions = true;
