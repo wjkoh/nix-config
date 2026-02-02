@@ -2,9 +2,9 @@ version: '3'
 
 tasks:
   mbp-14:
-    desc: Switch home-manager on mbp-14
+    desc: Switch nix-darwin on mbp-14
     cmds:
-      - nix run home-manager/master -- switch --flake .#wjkoh@mbp-14
+      - sudo darwin-rebuild switch --flake .#mbp-14
 
   z2-mini:
     desc: Switch nixos on z2-mini

@@ -2,7 +2,7 @@
 
 ## 1. Overview
 The goal of this repository is to manage distinct systems using a single Git repository and Flake:
-1.  **MacBook Pro 14 (macOS):** Hostname `mbp-14`. Uses Home Manager (standalone) to manage user tools and dotfiles.
+1.  **MacBook Pro 14 (macOS):** Hostname `mbp-14`. Uses **nix-darwin** for system-level configuration and Home Manager (as a module) for user tools and dotfiles.
     > **Setup:** To set the hostname on macOS, run:
     > ```bash
     > sudo scutil --set ComputerName "mbp-14"
@@ -31,6 +31,7 @@ This repository uses a modular structure to maximize code reuse:
 │       └── gui.nix          # GUI tools (Ghostty, etc.)
 ├── hosts/
 │   ├── mbp-14/              # macOS specific configs (MacBook Pro 14)
+│   │   ├── configuration.nix# System-level config (nix-darwin)
 │   │   └── home.nix         # macOS-specific home overrides
 │   └── z2-mini/             # NixOS specific configs (HP Z2 Mini G1a)
 │       ├── configuration.nix# System-level config
@@ -44,12 +45,12 @@ This repository uses a modular structure to maximize code reuse:
 
 The `flake.nix` produces two types of outputs:
 *   `nixosConfigurations`: For the `z2-mini` machine.
-*   `homeConfigurations`: For the `mbp-14` machine.
+*   `darwinConfigurations`: For the `mbp-14` machine.
 
 **Concept:**
 *   **Shared Inputs:** Both systems share `nixpkgs` versions via `flake.lock`.
 *   **NixOS (`z2-mini`):** Implements Home Manager as a system module for atomic updates.
-*   **macOS (`mbp-14`):** Uses Home Manager in standalone mode.
+*   **macOS (`mbp-14`):** Implements nix-darwin with Home Manager as a system module for atomic updates.
 
 ### Shared Configuration (`modules/home/`)
 
@@ -63,23 +64,23 @@ The `flake.nix` produces two types of outputs:
 ## 5. Workflow
 
 ### Updating mbp-14 (MacBook Pro)
-You can run Home Manager using `nix run` without installing the `home-manager` CLI tool globally.
+Use `darwin-rebuild` to update both system and user configurations.
 
 ```bash
 # From local source
-$ nix run home-manager/master -- switch --flake .#wjkoh@mbp-14
+$ sudo darwin-rebuild switch --flake .#mbp-14
 
 # Directly from GitHub (useful for bootstrapping)
-$ nix run home-manager/master -- switch --flake github:wjkoh/nix-config#wjkoh@mbp-14
+$ sudo nix run nix-darwin -- switch --flake github:wjkoh/nix-config#mbp-14
 ```
 
 ### Updating z2-mini (HP Z2 Mini)
 ```bash
 # From local source
-# nixos-rebuild switch --flake .#z2-mini
+# sudo nixos-rebuild switch --flake .#z2-mini
 
 # Directly from GitHub
-# nixos-rebuild switch --flake github:wjkoh/nix-config#z2-mini
+# sudo nixos-rebuild switch --flake github:wjkoh/nix-config#z2-mini
 ```
 
 ## 6. Benefits
