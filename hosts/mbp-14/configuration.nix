@@ -24,6 +24,8 @@
     NSGlobalDomain = {
       AppleInterfaceStyleSwitchesAutomatically = true;
       KeyRepeat = 2;
+      InitialKeyRepeat = 15;
+      ApplePressAndHoldEnabled = false;
     };
   };
 
