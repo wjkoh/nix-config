@@ -45,7 +45,6 @@
     onActivation.cleanup = "zap";
     onActivation.autoUpdate = true;
     casks = [
-      "devdocs"
       "discord"
       "ghostty"
       "google-chat"
