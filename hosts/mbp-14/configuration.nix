@@ -50,10 +50,7 @@
       "netnewswire"
       "postman"
       "steam"
-      "slack"
-      "telegram"
       "trezor-suite"
-      "yubico-authenticator"
       "zoom"
     ];
     masApps = {
@@ -65,6 +62,9 @@
       "Amazon Kindle" = 302584613;
       "Xcode" = 497799835;
       "Ridi" = 1220489113;
+      "Slack" = 803453959;
+      "Telegram" = 747648890;
+      "Yubico Authenticator" = 1497506650;
     };
   };
 }
