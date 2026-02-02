@@ -21,6 +21,8 @@
       AppleShowAllExtensions = true;
       FXPreferredViewStyle = "Nlsv";
       ShowPathbar = true;
+      FXDefaultSearchScope = "SCcf";
+      _FXShowPosixPathInTitle = true;
     };
     loginwindow.LoginwindowText = "If you found this computer, please contact wjngkoh@gmail.com. Reward available.";
     NSGlobalDomain = {
@@ -28,6 +30,13 @@
       KeyRepeat = 2;
       InitialKeyRepeat = 15;
       ApplePressAndHoldEnabled = false;
+      AppleKeyboardUIMode = 3;
+      "com.apple.trackpad.trackpadCornerClickBehavior" = 1;
+      "com.apple.trackpad.enableSecondaryClick" = true;
+    };
+    trackpad = {
+      Clicking = true;
+      TrackpadThreeFingerDrag = true;
     };
   };
 
