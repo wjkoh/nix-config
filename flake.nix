@@ -60,9 +60,6 @@
           # Main NixOS configuration file
           ./hosts/z2-mini/configuration.nix
 
-          # Enable unfree packages
-          {nixpkgs.config.allowUnfree = true;}
-
           # Home Manager module
           home-manager.nixosModules.home-manager
           {
