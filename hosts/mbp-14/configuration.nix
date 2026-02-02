@@ -16,6 +16,18 @@
     dock = {
       autohide = true;
       show-recents = false;
+      persistent-apps = [
+        "/Applications/Ghostty.app"
+        "/Applications/Google Chrome.app"
+        "/Applications/Xcode.app"
+        "/Applications/Slack.app"
+        "/Applications/Discord.app"
+        "/Applications/Telegram.app"
+        "/Applications/KakaoTalk.app"
+        "/Applications/NetNewsWire.app"
+        "/Applications/iA Writer.app"
+        "/System/Applications/System Settings.app"
+      ];
     };
     finder = {
       AppleShowAllExtensions = true;
