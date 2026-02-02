@@ -48,6 +48,7 @@
       "discord"
       "ghostty"
       "google-chrome"
+      "ledger-live"
       "netnewswire"
       "postman"
       "steam"
