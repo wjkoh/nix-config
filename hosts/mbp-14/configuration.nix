@@ -22,7 +22,7 @@
       ShowPathbar = true;
     };
     NSGlobalDomain = {
-      AppleInterfaceStyle = "Dark";
+      AppleInterfaceStyleSwitchesAutomatically = true;
       KeyRepeat = 2;
     };
   };
