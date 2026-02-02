@@ -45,7 +45,10 @@
     onActivation.cleanup = "zap";
     onActivation.autoUpdate = true;
     casks = [
+      "devdocs"
+      "discord"
       "ghostty"
+      "google-chat"
       "google-chrome"
       "netnewswire"
       "postman"
@@ -64,6 +67,9 @@
       "Slack" = 803453959;
       "Telegram" = 747648890;
       "Yubico Authenticator" = 1497506650;
+      "FocusFlight" = 6648771147;
+      "DaisyDisk" = 411643860;
+      "Outread" = 778846279;
     };
   };
 }
