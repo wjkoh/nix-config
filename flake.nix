@@ -8,6 +8,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     neovim = {
       url = "github:wjkoh/neovim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,6 +22,7 @@
     self,
     nixpkgs,
     home-manager,
+    nix-darwin,
     neovim,
     ...
   } @ inputs: let
@@ -73,20 +78,24 @@
       };
     };
 
-    # Standalone Home Manager configuration entrypoint
-    # Available through 'home-manager --flake .#wjkoh@mbp-14'
-    homeConfigurations = {
-      "wjkoh@mbp-14" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
-          system = "aarch64-darwin";
-          config.allowUnfree = true;
-        };
-        extraSpecialArgs = {
-          inherit inputs outputs neovim;
-          llamaCppPackage = nixpkgs.legacyPackages.aarch64-darwin.llama-cpp;
-        };
+    # Nix-Darwin configuration entrypoint
+    # Available through 'darwin-rebuild switch --flake .#mbp-14'
+    darwinConfigurations = {
+      "mbp-14" = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        specialArgs = {inherit inputs outputs;};
         modules = [
-          ./hosts/mbp-14/home.nix
+          ./hosts/mbp-14/configuration.nix
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = {
+              inherit inputs outputs neovim;
+              llamaCppPackage = nixpkgs.legacyPackages.aarch64-darwin.llama-cpp;
+            };
+            home-manager.users.wjkoh = import ./hosts/mbp-14/home.nix;
+          }
         ];
       };
     };
