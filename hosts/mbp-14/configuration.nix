@@ -47,7 +47,6 @@
     casks = [
       "discord"
       "ghostty"
-      "google-chat"
       "google-chrome"
       "netnewswire"
       "postman"
