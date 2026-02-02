@@ -19,6 +19,7 @@
     };
     finder = {
       AppleShowAllExtensions = true;
+      FXPreferredViewStyle = "Nlsv";
       ShowPathbar = true;
     };
     loginwindow.LoginwindowText = "If you found this computer, please contact wjngkoh@gmail.com. Reward available.";
