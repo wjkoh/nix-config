@@ -58,6 +58,15 @@
   networking.computerName = "mbp-14";
   networking.localHostName = "mbp-14";
 
+  environment.systemPackages = [
+    pkgs.coreutils
+    pkgs.findutils
+    pkgs.gnugrep
+    pkgs.gnused
+    pkgs.moreutils
+    pkgs.watch
+  ];
+
   # Homebrew configuration
   homebrew = {
     enable = true;
