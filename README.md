@@ -102,3 +102,17 @@ On both systems, you must authenticate manually to use `gcloud` and application 
 $ gcloud auth login
 $ gcloud auth application-default login
 ```
+
+## 8. Key Tools & Aliases
+
+To enhance productivity, several modern CLI replacements and aliases are configured:
+
+| Command | Alias To | Description |
+| :--- | :--- | :--- |
+| `man` | `tldr` | Displays concise cheat sheets instead of full manuals. |
+| `df` | `duf` | Disk Usage/Free - a better `df` with colors and graphs. |
+| `du` | `gdu` | Disk Usage Analyzer - a fast, interactive `du` alternative. |
+| `cat` | `bat` | A `cat` clone with syntax highlighting and Git integration. |
+| `ls` | `eza` | A modern, maintained replacement for `ls`. |
+
+> **Note:** The original commands are available via standard paths or by unaliasing if strictly needed.
