@@ -158,6 +158,7 @@
   services.tailscale = {enable = true;};
   environment.enableAllTerminfo = true;
   nix.settings.experimental-features = "nix-command flakes";
+  nixpkgs.config.allowUnfree = true;
 
   systemd.sleep.extraConfig = ''
     AllowSuspend=no
