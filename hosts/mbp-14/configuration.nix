@@ -66,7 +66,7 @@
       "discord"
       "ghostty"
       "google-chrome"
-      "ledger-live"
+      "ledger-wallet"
       "netnewswire"
       "postman"
       "steam"
