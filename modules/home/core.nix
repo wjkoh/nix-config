@@ -16,8 +16,10 @@
     llamaCppPackage
     pkgs.btop
     pkgs.curl
+    pkgs.duf
     pkgs.fd
     pkgs.fx
+    pkgs.gdu
     pkgs.gemini-cli
     pkgs.git
     pkgs.glow
@@ -84,6 +86,8 @@
     syntaxHighlighting.enable = true;
     shellAliases = {
       cat = "bat";
+      df = "duf";
+      du = "gdu";
       ls = "eza --icons";
       ll = "eza -l --icons --git -a";
       lt = "eza --tree --level=2 --long --icons --git";
