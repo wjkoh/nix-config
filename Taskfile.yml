@@ -16,6 +16,11 @@ tasks:
     cmds:
       - nix flake update
 
+  fmt:
+    desc: Format all Nix files
+    cmds:
+      - nix fmt .
+
   ssh:
     desc: SSH into z2-mini
     cmds:
