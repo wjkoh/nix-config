@@ -49,7 +49,6 @@
       "google-chrome"
       "netnewswire"
       "postman"
-      "ridibooks"
       "steam"
       "slack"
       "telegram"
@@ -65,6 +64,7 @@
       "KakaoTalk" = 869223134;
       "Amazon Kindle" = 302584613;
       "Xcode" = 497799835;
+      "Ridi" = 1220489113;
     };
   };
 }
