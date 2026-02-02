@@ -38,4 +38,17 @@
 
   # Set the primary user for user-dependent defaults
   system.primaryUser = "wjkoh";
+
+  # Homebrew configuration
+  homebrew = {
+    enable = true;
+    onActivation.cleanup = "zap";
+    onActivation.autoUpdate = true;
+    casks = [
+      "ghostty"
+    ];
+    masApps = {
+      "Bitwarden" = 1352778147;
+    };
+  };
 }
