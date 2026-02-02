@@ -39,6 +39,11 @@
   # Set the primary user for user-dependent defaults
   system.primaryUser = "wjkoh";
 
+  # Hostname
+  networking.hostName = "mbp-14";
+  networking.computerName = "mbp-14";
+  networking.localHostName = "mbp-14";
+
   # Homebrew configuration
   homebrew = {
     enable = true;
