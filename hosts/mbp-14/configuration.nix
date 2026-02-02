@@ -55,6 +55,7 @@
       Clicking = true;
       TrackpadThreeFingerDrag = true;
     };
+    WindowManager.GloballyEnabled = true;
   };
 
   # Backward compatibility
