@@ -1,4 +1,8 @@
 {pkgs, ...}: {
+  imports = [
+    ./aerospace.nix
+  ];
+
   # Nix configuration ------------------------------------------------------------------------------
   nix.enable = false;
   # nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -10,7 +14,6 @@
   # nix.gc.automatic = true;
 
   # Window Management
-  services.aerospace.enable = true;
   services.jankyborders.enable = true;
 
   # Keyboard
