@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   # Nix configuration ------------------------------------------------------------------------------
-  nix.enable = false;
-  # nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.enable = true;
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
 
   # Nix Store Maintenance
