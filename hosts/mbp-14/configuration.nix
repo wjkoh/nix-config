@@ -16,9 +16,9 @@
   # Window Management
   services.jankyborders = {
     enable = true;
-    width = 6.0;
-    active_color = "0xffe1e3e4"; # Light Gray
-    inactive_color = "0xff414550"; # Dark Gray
+    width = 5.0;
+    active_color = "0xffe1e3e4";
+    inactive_color = "0xff494d64";
   };
 
   # Keyboard
