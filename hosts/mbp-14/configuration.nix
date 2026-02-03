@@ -79,7 +79,7 @@
       Clicking = true;
       TrackpadThreeFingerDrag = false;
     };
-    WindowManager.GloballyEnabled = true;
+    WindowManager.GloballyEnabled = false;
   };
 
   # Backward compatibility
