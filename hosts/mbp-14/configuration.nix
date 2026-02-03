@@ -4,6 +4,14 @@
   # nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
 
+  # Nix Store Maintenance
+  nix.optimise.automatic = true;
+  nix.gc.automatic = true;
+
+  # Window Management
+  services.aerospace.enable = true;
+  services.jankyborders.enable = true;
+
   # Keyboard
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToControl = true;
@@ -13,7 +21,12 @@
 
   # System preferences
   system.defaults = {
+    screencapture = {
+      location = "~/Pictures/Screenshots";
+      type = "png";
+    };
     dock = {
+      scroll-to-open = true;
       autohide = true;
       show-recents = false;
       orientation = "bottom";
@@ -35,6 +48,7 @@
       wvous-br-corner = 2;
     };
     finder = {
+      QuitMenuItem = true;
       AppleShowAllExtensions = true;
       FXPreferredViewStyle = "Nlsv";
       ShowPathbar = true;
@@ -48,6 +62,7 @@
       LoginwindowText = "Found this? Contact wjngkoh@gmail.com. Cash reward.";
     };
     NSGlobalDomain = {
+      NSWindowShouldDragOnGesture = true;
       AppleInterfaceStyleSwitchesAutomatically = true;
       KeyRepeat = 2;
       InitialKeyRepeat = 15;
