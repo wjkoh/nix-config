@@ -42,7 +42,10 @@
       _FXSortFoldersFirst = true;
       FXRemoveOldTrashItems = true;
     };
-    loginwindow.LoginwindowText = "If you found this computer, please contact wjngkoh@gmail.com. Reward available.";
+    loginwindow = {
+      GuestEnabled = false;
+      LoginwindowText = "Found this? Contact wjngkoh@gmail.com. Cash reward.";
+    };
     NSGlobalDomain = {
       AppleInterfaceStyleSwitchesAutomatically = true;
       KeyRepeat = 2;
