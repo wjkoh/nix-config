@@ -9,6 +9,8 @@
   system.keyboard.remapCapsLockToControl = true;
   services.karabiner-elements = {
     enable = true;
+    # Downgrade to 14.13.0 to fix issue with latest version
+    # See: https://github.com/nix-darwin/nix-darwin/issues/1041
     package = pkgs.karabiner-elements.overrideAttrs (old: {
       version = "14.13.0";
 
