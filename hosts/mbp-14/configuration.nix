@@ -40,6 +40,7 @@
       FXDefaultSearchScope = "SCcf";
       _FXShowPosixPathInTitle = true;
       _FXSortFoldersFirst = true;
+      FXRemoveOldTrashItems = true;
     };
     loginwindow.LoginwindowText = "If you found this computer, please contact wjngkoh@gmail.com. Reward available.";
     NSGlobalDomain = {
@@ -48,12 +49,13 @@
       InitialKeyRepeat = 15;
       ApplePressAndHoldEnabled = false;
       AppleKeyboardUIMode = 3;
+      "com.apple.mouse.tapBehavior" = 1;
       "com.apple.trackpad.trackpadCornerClickBehavior" = 1;
       "com.apple.trackpad.enableSecondaryClick" = true;
     };
     trackpad = {
       Clicking = true;
-      TrackpadThreeFingerDrag = true;
+      TrackpadThreeFingerDrag = false;
     };
     WindowManager.GloballyEnabled = true;
   };
@@ -74,6 +76,14 @@
   networking.hostName = "mbp-14";
   networking.computerName = "mbp-14";
   networking.localHostName = "mbp-14";
+
+  # Firewall
+  networking.applicationFirewall = {
+    enable = true;
+    enableStealthMode = true;
+    allowSigned = true;
+    allowSignedApp = true;
+  };
 
   environment.systemPackages = [
     pkgs.coreutils
