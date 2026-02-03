@@ -60,27 +60,6 @@
                 }
               ];
             }
-            {
-              description = "Caps Lock to Control";
-              manipulators = [
-                {
-                  from = {
-                    key_code = "caps_lock";
-                    modifiers = {
-                      optional = [
-                        "any"
-                      ];
-                    };
-                  };
-                  to = [
-                    {
-                      key_code = "left_control";
-                    }
-                  ];
-                  type = "basic";
-                }
-              ];
-            }
           ];
         };
         devices = [];
