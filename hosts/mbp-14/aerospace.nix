@@ -45,6 +45,15 @@
       # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
       automatically-unhide-macos-hidden-apps = false;
 
+      on-window-detected = [
+        {
+          "if" = {
+            app-id = "com.mitchellh.ghostty";
+          };
+          run = ["layout tiling"];
+        }
+      ];
+
       # List of workspaces that should stay alive even when they contain no windows,
       # even when they are invisible.
       # This config version is only available since 'config-version = 2'
