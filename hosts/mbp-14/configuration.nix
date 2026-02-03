@@ -54,7 +54,7 @@
     };
     trackpad = {
       Clicking = true;
-      TrackpadThreeFingerDrag = true;
+      TrackpadThreeFingerDrag = false;
     };
     WindowManager.GloballyEnabled = true;
   };
