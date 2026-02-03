@@ -16,6 +16,7 @@
     dock = {
       autohide = true;
       show-recents = false;
+      orientation = "bottom";
       persistent-apps = [
         "/Applications/Ghostty.app"
         "/Applications/Google Chrome.app"
