@@ -1,8 +1,4 @@
 {pkgs, ...}: {
-  home.packages = [
-    pkgs.karabiner-elements
-  ];
-
   xdg.configFile."ghostty/config".text = ''
     theme = Catppuccin Mocha
     font-family = JetBrainsMono Nerd Font Mono
