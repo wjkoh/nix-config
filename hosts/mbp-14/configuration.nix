@@ -49,6 +49,7 @@
       InitialKeyRepeat = 15;
       ApplePressAndHoldEnabled = false;
       AppleKeyboardUIMode = 3;
+      "com.apple.mouse.tapBehavior" = 1;
       "com.apple.trackpad.trackpadCornerClickBehavior" = 1;
       "com.apple.trackpad.enableSecondaryClick" = true;
     };
