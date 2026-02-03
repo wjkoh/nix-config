@@ -1,12 +1,13 @@
 {pkgs, ...}: {
   # Nix configuration ------------------------------------------------------------------------------
-  nix.enable = true;
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.enable = false;
+  # nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
 
   # Nix Store Maintenance
-  nix.optimise.automatic = true;
-  nix.gc.automatic = true;
+  # Disabled because they require nix.enable = true, which conflicts with Determinate Nix
+  # nix.optimise.automatic = true;
+  # nix.gc.automatic = true;
 
   # Window Management
   services.aerospace.enable = true;
