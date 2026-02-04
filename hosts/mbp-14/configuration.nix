@@ -37,6 +37,7 @@
     dock = {
       scroll-to-open = true;
       autohide = true;
+      expose-group-apps = true;
       show-recents = false;
       mru-spaces = false;
       orientation = "bottom";
