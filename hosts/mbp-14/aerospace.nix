@@ -7,7 +7,6 @@
         {
           id = "com.mitchellh.ghostty";
           workspace = "G";
-          floating = true;
         }
 
         # Specific App Rules
