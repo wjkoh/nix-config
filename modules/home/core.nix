@@ -73,6 +73,7 @@
     - Always ask for confirmation before changing files.
     - After creating commits on the git branch, create a pull request using the `gh` command.
     - Always format code using `nix fmt .` (not `nix fmt`, which formats stdin).
+    - If you need git precommit hooks, use https://github.com/evilmartians/lefthook instead of pre-commit.
     - Do not merge pull requests yourself. The user always merges PRs.
   '';
 
