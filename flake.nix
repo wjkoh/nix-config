@@ -41,11 +41,12 @@
       default = pkgs.mkShell {
         nativeBuildInputs = [
           pkgs.alejandra
-          pkgs.pre-commit
+          pkgs.lefthook
+          pkgs.yamllint
           pkgs.go-task
         ];
         shellHook = ''
-          pre-commit install
+          lefthook install
         '';
       };
     });
