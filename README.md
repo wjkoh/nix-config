@@ -120,7 +120,7 @@ To enhance productivity, several modern CLI replacements and aliases are configu
 ## 9. CI & Enforcement
 
 ### Git Hooks (Lefthook)
-This repository uses [Lefthook](https://github.com/evilmartians/lefthook) for git hooks to ensure code quality. The hooks run automatically on `git commit` inside the development shell.
+This repository uses [Lefthook](https://github.com/evilmartians/lefthook) for git hooks to ensure code quality. We chose Lefthook (over pre-commit) and markdown-oxide (over marksman) to avoid introducing Python or .NET dependencies into the environment. The hooks run automatically on `git commit` and `git push` inside the development shell.
 
 *   **`nix-fmt`**: Formats all `.nix` files using `alejandra`.
 *   **`check-yaml`**: Lints all YAML files.
