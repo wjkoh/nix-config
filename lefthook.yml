@@ -1,0 +1,12 @@
+---
+# Lefthook configuration
+
+pre-commit:
+  parallel: true
+  commands:
+    nix-fmt:
+      glob: "*.nix"
+      run: nix fmt {staged_files}
+    check-yaml:
+      glob: "*.{yaml,yml}"
+      run: yamllint {staged_files}
