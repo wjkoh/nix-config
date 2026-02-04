@@ -43,7 +43,7 @@
         } # Apple Notes
         {
           id = "net.cementpla.FocusFlights";
-          workspace = "W";
+          workspace = "Z";
         } # FocusFlight
 
         # --- Reading (R) ---
