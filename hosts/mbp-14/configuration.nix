@@ -37,6 +37,8 @@
     dock = {
       scroll-to-open = true;
       autohide = true;
+      autohide-delay = 0.0;
+      autohide-time-modifier = 0.2;
       expose-group-apps = true;
       show-recents = false;
       mru-spaces = false;
@@ -75,6 +77,7 @@
     spaces.spans-displays = true;
     NSGlobalDomain = {
       AppleSpacesSwitchOnActivate = false;
+      NSAutomaticWindowAnimationsEnabled = false;
       NSWindowShouldDragOnGesture = true;
       AppleInterfaceStyleSwitchesAutomatically = true;
       KeyRepeat = 2;
