@@ -52,6 +52,12 @@
           };
           run = ["layout floating"];
         }
+        {
+          "if" = {
+            app-id = "com.google.Chrome.app.agimnkijcaahngcdmfeangaknmldooml";
+          };
+          run = ["move-node-to-workspace Y"];
+        }
       ];
 
       # List of workspaces that should stay alive even when they contain no windows,
