@@ -50,7 +50,16 @@
           "if" = {
             app-id = "com.mitchellh.ghostty";
           };
-          run = ["layout floating"];
+          run = [
+            "layout floating"
+            "move-node-to-workspace G"
+          ];
+        }
+        {
+          "if" = {
+            app-id = "com.google.Chrome";
+          };
+          run = ["move-node-to-workspace C"];
         }
         {
           "if" = {
