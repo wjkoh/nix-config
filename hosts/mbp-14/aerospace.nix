@@ -67,6 +67,12 @@
           };
           run = ["move-node-to-workspace Y"];
         }
+        {
+          "if" = {
+            app-id = "app.folk.app";
+          };
+          run = ["move-node-to-workspace F"];
+        }
       ];
 
       # List of workspaces that should stay alive even when they contain no windows,
