@@ -128,6 +128,19 @@
           workspace = "P";
         } # Photos
 
+        # --- Utilities (Floating) ---
+        {
+          id = "com.apple.finder";
+          floating = true;
+        }
+        {
+          id = "com.bitwarden.desktop";
+          workspace = "S";
+          floating = true;
+        }
+
+        # --- GitHub (Specific Rules) ---
+
         # --- YouTube (Specific Rules for Video Workspace) ---
         {
           id = "com.google.Chrome.app.agimnkijcaahngcdmfeangaknmldooml";
