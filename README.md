@@ -6,15 +6,8 @@ The goal of this repository is to manage distinct systems using a single Git
 repository and Flake:
 
 1. **MacBook Pro 14 (macOS):** Hostname `mbp-14`. Uses **nix-darwin** for
-   system-level configuration and Home Manager (as a module) for user tools and
-   dotfiles.
-   > **Setup:** To set the hostname on macOS, run:
-   >
-   > ```bash
-   > sudo scutil --set ComputerName "mbp-14"
-   > sudo scutil --set LocalHostName "mbp-14"
-   > sudo scutil --set HostName "mbp-14"
-   > ```
+   system-level configuration (including hostname management) and Home Manager
+   (as a module) for user tools and dotfiles.
 2. **HP Z2 Mini G1a (NixOS):** Hostname `z2-mini`. Uses NixOS for system
    configuration and Home Manager (as a module) for user configuration.
 
@@ -114,8 +107,8 @@ After applying the configuration, some manual steps are required:
 
 ### Tailscale
 
-- **macOS (`mbp-14`):** Install Tailscale manually via the Mac App Store or as a
-  standalone app.
+- **macOS (`mbp-14`):** Tailscale is installed automatically via the Mac App Store.
+  Open the app to authenticate.
 - **NixOS (`z2-mini`):** Tailscale is managed as a system service. Run
   `sudo tailscale up` to authenticate.
 
@@ -152,17 +145,19 @@ configured:
 This repository uses [Lefthook](https://github.com/evilmartians/lefthook) for
 git hooks to ensure code quality. We chose Lefthook (over pre-commit) and
 markdown-oxide (over marksman) to avoid introducing Python or .NET dependencies
-into the environment. The hooks run automatically on `git commit` and `git push`
-inside the development shell.
+into the environment. The hooks run automatically inside the development shell:
 
-- **`nix-fmt`**: Formats all `.nix` files using `alejandra`.
-- **`check-yaml`**: Lints all YAML files.
+- **Pre-commit**:
+  - `nix-fmt`: Formats all `.nix` files using `alejandra`.
+  - `check-yaml`: Lints all YAML files.
+- **Pre-push**:
+  - `nix-flake-check`: Runs `nix flake check` to enforce dependency constraints.
 
 ### Dependency Enforcement
 
 To keep the system minimal, we strictly enforce that **no `.NET` runtime
 (dotnet)** is included in the system closure. This is checked automatically via
-`nix flake check`.
+`nix flake check` (which runs on `git push`).
 
 To verify manually:
 
