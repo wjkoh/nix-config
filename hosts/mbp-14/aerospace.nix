@@ -1,7 +1,63 @@
 {pkgs, ...}: {
   services.aerospace = {
     enable = true;
-    settings = {
+    settings = let
+      appRules = [
+        # Floating apps
+        {
+          id = "com.mitchellh.ghostty";
+          workspace = "G";
+          floating = true;
+        }
+
+        # Specific App Rules
+        {
+          id = "com.google.Chrome.app.agimnkijcaahngcdmfeangaknmldooml";
+          workspace = "Y";
+        } # YouTube PWA
+        {
+          id = "com.google.Chrome";
+          title = "YouTube";
+          workspace = "Y";
+        } # YouTube in Browser Tab
+
+        {
+          id = "app.folk.app";
+          workspace = "F";
+        }
+        {
+          id = "com.kakao.KakaoTalkMac";
+          workspace = "K";
+        }
+        {
+          id = "com.hnc.Discord";
+          workspace = "D";
+        }
+        {
+          id = "com.ranchero.NetNewsWire-Evergreen";
+          workspace = "N";
+        }
+
+        # Generic Rules (Must be last to avoid overriding specific ones)
+        {
+          id = "com.google.Chrome";
+          workspace = "C";
+        }
+      ];
+
+      mkRule = rule: {
+        "if" =
+          {
+            app-id = rule.id;
+          }
+          // (
+            if rule ? title then {window-title-regex-substring = rule.title;} else {}
+          );
+        run =
+          (if rule ? floating && rule.floating then ["layout floating"] else [])
+          ++ ["move-node-to-workspace ${rule.workspace}"];
+      };
+    in {
       # Place a copy of this config to ~/.aerospace.toml
       # After that, you can edit ~/.aerospace.toml to your liking
 
@@ -45,35 +101,7 @@
       # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
       automatically-unhide-macos-hidden-apps = false;
 
-      on-window-detected = [
-        {
-          "if" = {
-            app-id = "com.mitchellh.ghostty";
-          };
-          run = [
-            "layout floating"
-            "move-node-to-workspace G"
-          ];
-        }
-        {
-          "if" = {
-            app-id = "com.google.Chrome";
-          };
-          run = ["move-node-to-workspace C"];
-        }
-        {
-          "if" = {
-            app-id = "com.google.Chrome.app.agimnkijcaahngcdmfeangaknmldooml";
-          };
-          run = ["move-node-to-workspace Y"];
-        }
-        {
-          "if" = {
-            app-id = "app.folk.app";
-          };
-          run = ["move-node-to-workspace F"];
-        }
-      ];
+      on-window-detected = map mkRule appRules;
 
       # List of workspaces that should stay alive even when they contain no windows,
       # even when they are invisible.
