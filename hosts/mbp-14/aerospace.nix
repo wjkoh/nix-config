@@ -13,7 +13,26 @@
           workspace = "F";
         } # Folk
 
-        # --- Writing ---
+        # --- Development (D) ---
+        {
+          id = "com.apple.dt.Xcode";
+          workspace = "D";
+        }
+        {
+          id = "com.postmanlabs.mac";
+          workspace = "D";
+        }
+        {
+          id = "com.google.Chrome.app.mjoklplbddabcmpepnokjaffbmgbkkgg";
+          workspace = "D";
+        } # GitHub PWA
+        {
+          id = "com.google.Chrome";
+          title = "GitHub";
+          workspace = "D";
+        } # GitHub Tab
+
+        # --- Writing (W) ---
         {
           id = "pro.writer.mac";
           workspace = "W";
@@ -23,7 +42,7 @@
           workspace = "W";
         } # Apple Notes
 
-        # --- Reading ---
+        # --- Reading (R) ---
         {
           id = "com.ranchero.NetNewsWire-Evergreen";
           workspace = "R";
@@ -40,8 +59,12 @@
           id = "com.amazon.Lassen";
           workspace = "R";
         } # Kindle
+        {
+          id = "com.outreadapp.Outread";
+          workspace = "R";
+        } # Outread
 
-        # --- Chat ---
+        # --- Chat (C) ---
         {
           id = "com.kakao.KakaoTalkMac";
           workspace = "C";
@@ -50,6 +73,46 @@
           id = "com.hnc.Discord";
           workspace = "C";
         } # Discord
+        {
+          id = "com.tinyspeck.slackmacgap";
+          workspace = "C";
+        } # Slack
+        {
+          id = "ru.keepcoder.Telegram";
+          workspace = "C";
+        } # Telegram
+        {
+          id = "us.zoom.xos";
+          workspace = "C";
+        } # Zoom
+
+        # --- Security & System (S) ---
+        {
+          id = "com.bitwarden.desktop";
+          workspace = "S";
+        }
+        {
+          id = "com.ledger.live";
+          workspace = "S";
+        }
+        {
+          id = "io.trezor.suite";
+          workspace = "S";
+        }
+        {
+          id = "com.yubico.yubioath";
+          workspace = "S";
+        }
+        {
+          id = "com.daisydiskapp.DaisyDiskStandAlone";
+          workspace = "S";
+        }
+
+        # --- Games (G) ---
+        {
+          id = "com.valvesoftware.steam";
+          workspace = "G";
+        }
 
         # --- Media & Entertainment ---
         {
@@ -64,17 +127,6 @@
           id = "com.apple.Photos";
           workspace = "P";
         } # Photos
-
-        # --- GitHub (Specific Rules) ---
-        {
-          id = "com.google.Chrome.app.mjoklplbddabcmpepnokjaffbmgbkkgg";
-          workspace = "G";
-        }
-        {
-          id = "com.google.Chrome";
-          title = "GitHub";
-          workspace = "G";
-        }
 
         # --- YouTube (Specific Rules for Video Workspace) ---
         {
