@@ -175,7 +175,11 @@
             then ["layout floating"]
             else []
           )
-          ++ ["move-node-to-workspace ${rule.workspace}"];
+          ++ (
+            if rule ? workspace
+            then ["move-node-to-workspace ${rule.workspace}"]
+            else []
+          );
       };
     in {
       # Place a copy of this config to ~/.aerospace.toml
