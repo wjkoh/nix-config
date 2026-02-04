@@ -65,6 +65,17 @@
           workspace = "P";
         } # Photos
 
+        # --- GitHub (Specific Rules) ---
+        {
+          id = "com.google.Chrome.app.mjoklplbddabcmpepnokjaffbmgbkkgg";
+          workspace = "G";
+        }
+        {
+          id = "com.google.Chrome";
+          title = "GitHub";
+          workspace = "G";
+        }
+
         # --- YouTube (Specific Rules for Video Workspace) ---
         {
           id = "com.google.Chrome.app.agimnkijcaahngcdmfeangaknmldooml";
