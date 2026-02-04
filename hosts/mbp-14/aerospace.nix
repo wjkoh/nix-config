@@ -46,12 +46,6 @@
       automatically-unhide-macos-hidden-apps = false;
 
       on-window-detected = [
-        {
-          "if" = {
-            app-id = "com.mitchellh.ghostty";
-          };
-          run = ["layout tiling"];
-        }
       ];
 
       # List of workspaces that should stay alive even when they contain no windows,
