@@ -41,6 +41,10 @@
           id = "com.apple.Notes";
           workspace = "W";
         } # Apple Notes
+        {
+          id = "net.cementpla.FocusFlights";
+          workspace = "W";
+        } # FocusFlight
 
         # --- Reading (R) ---
         {
@@ -85,6 +89,10 @@
           id = "us.zoom.xos";
           workspace = "C";
         } # Zoom
+        {
+          id = "com.google.Chrome.app.mdpkiolbdkhdjpekfbkbmhigcaggjagi";
+          workspace = "C";
+        } # Google Chat
 
         # --- Security & System (S) ---
         {
