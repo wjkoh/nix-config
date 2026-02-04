@@ -50,7 +50,7 @@
           "if" = {
             app-id = "com.mitchellh.ghostty";
           };
-          run = ["layout floating"];
+          run = ["layout tiling"];
         }
       ];
 
