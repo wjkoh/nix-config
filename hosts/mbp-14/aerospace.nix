@@ -3,76 +3,83 @@
     enable = true;
     settings = let
       appRules = [
-        # Floating apps
+        # --- Core Productivity ---
         {
           id = "com.mitchellh.ghostty";
-          workspace = "G";
-        }
-
-        # Specific App Rules
-        {
-          id = "com.google.Chrome.app.agimnkijcaahngcdmfeangaknmldooml";
-          workspace = "Y";
-        } # YouTube PWA
-        {
-          id = "com.google.Chrome";
-          title = "YouTube";
-          workspace = "Y";
-        } # YouTube in Browser Tab
-
+          workspace = "T";
+        } # Terminal
         {
           id = "app.folk.app";
           workspace = "F";
-        }
-        {
-          id = "com.kakao.KakaoTalkMac";
-          workspace = "M";
-        }
-        {
-          id = "com.hnc.Discord";
-          workspace = "D";
-        }
-        {
-          id = "com.ranchero.NetNewsWire-Evergreen";
-          workspace = "N";
-        }
-        {
-          id = "com.apple.Music";
-          workspace = "M";
-        }
+        } # Folk
+
+        # --- Writing ---
         {
           id = "pro.writer.mac";
-          workspace = "N";
-        }
+          workspace = "W";
+        } # iA Writer
         {
           id = "com.apple.Notes";
-          workspace = "N";
-        }
+          workspace = "W";
+        } # Apple Notes
+
+        # --- Reading ---
+        {
+          id = "com.ranchero.NetNewsWire-Evergreen";
+          workspace = "R";
+        } # NetNewsWire
         {
           id = "com.ngocluu.goodlinks";
-          workspace = "N";
-        }
-        {
-          id = "com.apple.Photos";
-          workspace = "P";
-        }
+          workspace = "R";
+        } # GoodLinks
         {
           id = "com.initialcoms.BOM";
           workspace = "R";
-        }
+        } # RIDI
         {
           id = "com.amazon.Lassen";
           workspace = "R";
-        }
+        } # Kindle
+
+        # --- Chat ---
+        {
+          id = "com.kakao.KakaoTalkMac";
+          workspace = "C";
+        } # KakaoTalk
+        {
+          id = "com.hnc.Discord";
+          workspace = "C";
+        } # Discord
+
+        # --- Media & Entertainment ---
+        {
+          id = "com.apple.Music";
+          workspace = "M";
+        } # Music
         {
           id = "com.apple.TV";
-          workspace = "T";
-        }
+          workspace = "V";
+        } # TV
+        {
+          id = "com.apple.Photos";
+          workspace = "P";
+        } # Photos
 
-        # Generic Rules (Must be last to avoid overriding specific ones)
+        # --- YouTube (Specific Rules for Video Workspace) ---
+        {
+          id = "com.google.Chrome.app.agimnkijcaahngcdmfeangaknmldooml";
+          workspace = "V";
+        }
         {
           id = "com.google.Chrome";
-          workspace = "C";
+          title = "YouTube";
+          workspace = "V";
+        }
+
+        # --- Browser (Catch-All) ---
+        {
+          id = "com.google.Chrome";
+          workspace = "B";
         }
       ];
 
