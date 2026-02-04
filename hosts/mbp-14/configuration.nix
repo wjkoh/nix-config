@@ -38,6 +38,7 @@
       scroll-to-open = true;
       autohide = true;
       show-recents = false;
+      mru-spaces = false;
       orientation = "bottom";
       persistent-apps = [
         "/Applications/Ghostty.app"
@@ -70,7 +71,9 @@
       GuestEnabled = false;
       LoginwindowText = "Found this? Contact wjngkoh@gmail.com. Cash reward.";
     };
+    spaces.spans-displays = true;
     NSGlobalDomain = {
+      AppleSpacesSwitchOnActivate = false;
       NSWindowShouldDragOnGesture = true;
       AppleInterfaceStyleSwitchesAutomatically = true;
       KeyRepeat = 2;
