@@ -20,7 +20,7 @@ This repository uses a modular structure to maximize code reuse:
 ```text
 .
 ├── .envrc                   # Direnv configuration (auto-loads dev shell)
-├── .pre-commit-config.yaml  # Code formatting and linting rules
+├── lefthook.yml             # Git hooks (formatting, linting)
 ├── flake.nix                # Entry point for all systems
 ├── flake.lock
 ├── modules/
@@ -116,3 +116,20 @@ To enhance productivity, several modern CLI replacements and aliases are configu
 | `ls` | `eza` | A modern, maintained replacement for `ls`. |
 
 > **Note:** The original commands are available via standard paths or by unaliasing if strictly needed.
+
+## 9. CI & Enforcement
+
+### Git Hooks (Lefthook)
+This repository uses [Lefthook](https://github.com/evilmartians/lefthook) for git hooks to ensure code quality. The hooks run automatically on `git commit` inside the development shell.
+
+*   **`nix-fmt`**: Formats all `.nix` files using `alejandra`.
+*   **`check-yaml`**: Lints all YAML files.
+
+### Dependency Enforcement
+To keep the system minimal, we strictly enforce that **no `.NET` runtime (dotnet)** is included in the system closure. This is checked automatically via `nix flake check`.
+
+To verify manually:
+```bash
+nix flake check
+```
+If `dotnet` is found in the dependency graph, the check will fail and print the dependency path.
