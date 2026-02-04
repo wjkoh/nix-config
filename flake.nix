@@ -62,17 +62,18 @@
     in
       if target != null
       then {
-        no-dotnet = pkgs.runCommand "check-no-dotnet" {
-          nativeBuildInputs = [pkgs.gnugrep];
-          exportReferencesGraph = ["graph" target];
-        } ''
-          if grep -q "dotnet" graph; then
-            echo "Error: 'dotnet' found in the closure of ${system} configuration!"
-            grep "dotnet" graph
-            exit 1
-          fi
-          touch $out
-        '';
+        no-dotnet =
+          pkgs.runCommand "check-no-dotnet" {
+            nativeBuildInputs = [pkgs.gnugrep];
+            exportReferencesGraph = ["graph" target];
+          } ''
+            if grep -q "dotnet" graph; then
+              echo "Error: 'dotnet' found in the closure of ${system} configuration!"
+              grep "dotnet" graph
+              exit 1
+            fi
+            touch $out
+          '';
       }
       else {});
 
