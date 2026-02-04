@@ -10,3 +10,8 @@ pre-commit:
     check-yaml:
       glob: "*.{yaml,yml}"
       run: yamllint {staged_files}
+
+pre-push:
+  commands:
+    nix-flake-check:
+      run: nix flake check
