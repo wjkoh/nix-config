@@ -51,6 +51,31 @@
       };
     });
 
+    checks = forAllSystems (system: let
+      pkgs = nixpkgs.legacyPackages.${system};
+      target =
+        if system == "aarch64-darwin"
+        then self.darwinConfigurations.mbp-14.config.system.build.toplevel
+        else if system == "x86_64-linux"
+        then self.nixosConfigurations.z2-mini.config.system.build.toplevel
+        else null;
+    in
+      if target != null
+      then {
+        no-dotnet = pkgs.runCommand "check-no-dotnet" {
+          nativeBuildInputs = [pkgs.gnugrep];
+          exportReferencesGraph = ["graph" target];
+        } ''
+          if grep -q "dotnet" graph; then
+            echo "Error: 'dotnet' found in the closure of ${system} configuration!"
+            grep "dotnet" graph
+            exit 1
+          fi
+          touch $out
+        '';
+      }
+      else {});
+
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#z2-mini'
     nixosConfigurations = {
