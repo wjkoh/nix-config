@@ -27,7 +27,7 @@
         }
         {
           id = "com.kakao.KakaoTalkMac";
-          workspace = "K";
+          workspace = "M";
         }
         {
           id = "com.hnc.Discord";
@@ -51,10 +51,16 @@
             app-id = rule.id;
           }
           // (
-            if rule ? title then {window-title-regex-substring = rule.title;} else {}
+            if rule ? title
+            then {window-title-regex-substring = rule.title;}
+            else {}
           );
         run =
-          (if rule ? floating && rule.floating then ["layout floating"] else [])
+          (
+            if rule ? floating && rule.floating
+            then ["layout floating"]
+            else []
+          )
           ++ ["move-node-to-workspace ${rule.workspace}"];
       };
     in {
