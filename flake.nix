@@ -41,11 +41,11 @@
       default = pkgs.mkShell {
         nativeBuildInputs = [
           pkgs.alejandra
-          pkgs.pre-commit
+          pkgs.prek
           pkgs.go-task
         ];
         shellHook = ''
-          pre-commit install
+          prek -c .prek.yaml install
         '';
       };
     });

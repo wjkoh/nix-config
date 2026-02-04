@@ -20,7 +20,7 @@ This repository uses a modular structure to maximize code reuse:
 ```text
 .
 ├── .envrc                   # Direnv configuration (auto-loads dev shell)
-├── .pre-commit-config.yaml  # Code formatting and linting rules
+├── .prek.yaml               # Code formatting and linting rules (via prek)
 ├── flake.nix                # Entry point for all systems
 ├── flake.lock
 ├── modules/
