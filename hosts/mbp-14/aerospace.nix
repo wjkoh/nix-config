@@ -36,6 +36,38 @@
           id = "com.ranchero.NetNewsWire-Evergreen";
           workspace = "N";
         }
+        {
+          id = "com.apple.Music";
+          workspace = "M";
+        }
+        {
+          id = "pro.writer.mac";
+          workspace = "N";
+        }
+        {
+          id = "com.apple.Notes";
+          workspace = "N";
+        }
+        {
+          id = "com.ngocluu.goodlinks";
+          workspace = "N";
+        }
+        {
+          id = "com.apple.Photos";
+          workspace = "P";
+        }
+        {
+          id = "com.initialcoms.BOM";
+          workspace = "R";
+        }
+        {
+          id = "com.amazon.Lassen";
+          workspace = "R";
+        }
+        {
+          id = "com.apple.TV";
+          workspace = "T";
+        }
 
         # Generic Rules (Must be last to avoid overriding specific ones)
         {
