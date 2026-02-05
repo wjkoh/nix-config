@@ -89,7 +89,6 @@
       theme "catppuccin-mocha"
       show_startup_tips false
       simplified_ui true
-      on_force_close "quit"
     '';
     force = true;
   };
