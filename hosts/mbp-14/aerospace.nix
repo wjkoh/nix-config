@@ -207,6 +207,9 @@
         "exec-and-forget open -a 'Google Chrome'"
         "exec-and-forget open -a Ghostty"
         "exec-and-forget open -a KakaoTalk"
+        "exec-and-forget open -a 'Google Chat'"
+        "exec-and-forget open -a folk"
+        "exec-and-forget open -a 'iA Writer'"
       ];
 
       # Start AeroSpace at login
