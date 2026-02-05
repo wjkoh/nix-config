@@ -42,6 +42,10 @@
           workspace = "W";
         } # Apple Notes
         {
+          id = "com.apple.reminders";
+          workspace = "W";
+        } # Reminders
+        {
           id = "net.cementpla.FocusFlights";
           workspace = "Z";
         } # FocusFlight
