@@ -6,17 +6,6 @@
         complex_modifications = {
           rules = [
             {
-              description = "Tab to Alt (Hold) / Tab (Tap)";
-              manipulators = [
-                {
-                  from = {key_code = "tab";};
-                  to = [{key_code = "tab";}];
-                  to_if_held_down = [{key_code = "left_option";}];
-                  type = "basic";
-                }
-              ];
-            }
-            {
               description = "Caps Lock to Ctrl (Hold) / Esc (Tap)";
               manipulators = [
                 {
