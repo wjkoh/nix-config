@@ -1,5 +1,8 @@
 {pkgs, ...}: {
-  imports = [../../modules/home/default.nix];
+  imports = [
+    ../../modules/home/default.nix
+    ../../modules/home/karabiner.nix
+  ];
 
   home.username = "wjkoh";
   home.homeDirectory = "/Users/wjkoh";
