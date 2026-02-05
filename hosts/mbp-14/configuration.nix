@@ -147,6 +147,7 @@
       "discord"
       "ghostty"
       "google-chrome"
+      "google-drive"
       "karabiner-elements"
       "ledger-wallet"
       "netnewswire"
