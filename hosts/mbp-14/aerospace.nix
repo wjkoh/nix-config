@@ -151,6 +151,10 @@
           floating = true;
         }
         {
+          id = "org.pqrs.Karabiner-Elements.Settings";
+          floating = true;
+        }
+        {
           id = "com.bitwarden.desktop";
           workspace = "S";
           floating = true;
