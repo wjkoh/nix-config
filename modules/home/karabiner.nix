@@ -42,11 +42,16 @@
           devices = [
             {
               identifiers = {
+                is_keyboard = true;
+                is_pointing_device = true;
+                product_id = 10203;
                 vendor_id = 5824;
               };
               ignore = false;
             }
           ];
+          name = "Default";
+          virtual_hid_keyboard = {keyboard_type_v2 = "ansi";};
         }
       ];
     };
