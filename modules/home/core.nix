@@ -96,8 +96,21 @@
       ll = "eza -l --icons --git -a";
       lt = "eza --tree --level=2 --long --icons --git";
       lx = "eza -lbhHigUmuSa --time-style=long-iso --git --color-scale";
+
+      # Git
       g = "git";
       lg = "lazygit";
+      gs = "git status";
+      ga = "git add";
+      gcm = "git commit -m";
+      gco = "git checkout";
+      gcb = "git checkout -b";
+      gf = "git fetch";
+      gup = "git fetch && git rebase";
+      gp = "git push";
+      glog = "git log --oneline --graph --decorate";
+
+      # Docker
       ld = "lazydocker";
     };
   };
