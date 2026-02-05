@@ -97,6 +97,11 @@
           id = "com.google.Chrome.app.mdpkiolbdkhdjpekfbkbmhigcaggjagi";
           workspace = "C";
         } # Google Chat
+        {
+          id = "com.google.Chrome";
+          title = "Google Chat";
+          workspace = "C";
+        } # Google Chat Tab
 
         # --- Security & System (S) ---
         {
@@ -293,12 +298,12 @@
       #                 See:
       #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
       gaps = {
-        inner.horizontal = 10;
-        inner.vertical = 10;
-        outer.left = 10;
-        outer.bottom = 10;
-        outer.top = 10;
-        outer.right = 10;
+        inner.horizontal = 5;
+        inner.vertical = 5;
+        outer.left = 5;
+        outer.bottom = 5;
+        outer.top = 5;
+        outer.right = 5;
       };
 
       # 'main' binding mode declaration
@@ -376,6 +381,9 @@
         alt-x = "workspace X";
         alt-y = "workspace Y";
         alt-z = "workspace Z";
+
+        alt-rightSquareBracket = "workspace next";
+        alt-leftSquareBracket = "workspace prev";
 
         # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
         alt-shift-a = "move-node-to-workspace A";
