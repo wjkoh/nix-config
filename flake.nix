@@ -122,6 +122,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = {
               inherit inputs outputs neovim;
               llamaCppPackage = nixpkgs.legacyPackages.aarch64-darwin.llama-cpp;
