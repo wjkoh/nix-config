@@ -16,7 +16,10 @@
                       modifiers = {optional = ["any"];};
                     };
                     to = [{key_code = "left_control";}];
-                    to_if_alone = [{key_code = "escape";}];
+                    to_if_alone = [
+                      {key_code = "escape";}
+                      {select_input_source = {language = "^en$";};}
+                    ];
                     type = "basic";
                   }
                 ];
