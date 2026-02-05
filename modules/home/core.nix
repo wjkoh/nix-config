@@ -87,7 +87,8 @@
       default_layout "compact"
       mouse_mode true
       theme "catppuccin-mocha"
-      show_tips false
+      show_startup_tips false
+      simplified_ui true
     '';
     force = true;
   };
