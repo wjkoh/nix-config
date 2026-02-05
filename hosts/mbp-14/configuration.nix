@@ -121,6 +121,11 @@
     allowSignedApp = true;
   };
 
+  power.sleep = {
+    display = 10;
+    computer = 30;
+  };
+
   environment.systemPackages = [
     pkgs.coreutils
     pkgs.findutils
