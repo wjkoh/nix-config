@@ -203,7 +203,11 @@
 
       # You can use it to add commands that run after AeroSpace startup.
       # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-      after-startup-command = [];
+      after-startup-command = [
+        "exec-and-forget open -a 'Google Chrome'"
+        "exec-and-forget open -a Ghostty"
+        "exec-and-forget open -a KakaoTalk"
+      ];
 
       # Start AeroSpace at login
       start-at-login = false;
