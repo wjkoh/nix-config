@@ -43,8 +43,6 @@
             {
               identifiers = {
                 vendor_id = 5824;
-                is_keyboard = true;
-                is_pointing_device = false;
               };
               ignore = false;
             }
