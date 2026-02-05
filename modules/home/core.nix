@@ -81,12 +81,16 @@
     - Do not merge pull requests yourself. The user always merges PRs.
   '';
 
-  xdg.configFile."zellij/config.kdl".text = ''
-    pane_frames false
-    default_layout "compact"
-    mouse_mode true
-    theme "catppuccin-mocha"
-  '';
+  xdg.configFile."zellij/config.kdl" = {
+    text = ''
+      pane_frames false
+      default_layout "compact"
+      mouse_mode true
+      theme "catppuccin-mocha"
+      show_tips false
+    '';
+    force = true;
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
