@@ -88,6 +88,7 @@
       mouse_mode true
       theme "catppuccin-mocha"
       show_tips false
+      simplified_ui true
     '';
     force = true;
   };
