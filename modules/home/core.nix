@@ -30,6 +30,7 @@
     pkgs.jq
     pkgs.lazydocker
     pkgs.lazygit
+    pkgs.lazyjournal
     pkgs.lazysql
     pkgs.less
     pkgs.libfido2
@@ -43,6 +44,7 @@
     pkgs.tldr
     pkgs.yubikey-manager
     pkgs.yq-go
+    pkgs.zellij
   ];
 
   home.sessionVariables = {
