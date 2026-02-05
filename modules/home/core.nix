@@ -74,6 +74,7 @@
     - After creating commits on the git branch, create a pull request using the `gh` command.
     - Always format code using `nix fmt .` (not `nix fmt`, which formats stdin).
     - If you need git precommit hooks, use https://github.com/evilmartians/lefthook instead of pre-commit.
+    - When creating a GitHub pull request with `gh pr create`, always use explicit flags (e.g., `--head`, `--base`, `--title`, `--body` or `--body-file`) to ensure the command is non-interactive.
     - Do not merge pull requests yourself. The user always merges PRs.
   '';
 
@@ -113,6 +114,7 @@
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
+    options = ["--cmd cd"];
   };
 
   programs.bat = {
