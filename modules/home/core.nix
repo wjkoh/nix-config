@@ -33,6 +33,7 @@
     pkgs.lazysql
     pkgs.less
     pkgs.libfido2
+    pkgs.marp-cli
     pkgs.mosh
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.nethack
