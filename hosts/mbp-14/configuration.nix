@@ -74,6 +74,10 @@
       GuestEnabled = false;
       LoginwindowText = "Found this? Contact wjngkoh@gmail.com. Cash reward.";
     };
+    screensaver = {
+      askForPassword = true;
+      askForPasswordDelay = 0;
+    };
     spaces.spans-displays = true;
     NSGlobalDomain = {
       AppleSpacesSwitchOnActivate = false;
