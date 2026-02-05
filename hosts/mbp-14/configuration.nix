@@ -38,7 +38,7 @@
       scroll-to-open = true;
       autohide = true;
       autohide-delay = 0.0;
-      autohide-time-modifier = 0.2;
+      autohide-time-modifier = 0.0;
       expose-group-apps = true;
       show-recents = false;
       mru-spaces = false;
@@ -61,6 +61,8 @@
       wvous-br-corner = 2;
     };
     finder = {
+      CreateDesktop = false;
+      ShowStatusBar = true;
       QuitMenuItem = true;
       AppleShowAllExtensions = true;
       FXPreferredViewStyle = "Nlsv";
@@ -80,6 +82,7 @@
     };
     spaces.spans-displays = true;
     NSGlobalDomain = {
+      "com.apple.swipescrolldirection" = true;
       AppleSpacesSwitchOnActivate = false;
       NSAutomaticWindowAnimationsEnabled = false;
       NSWindowShouldDragOnGesture = true;
