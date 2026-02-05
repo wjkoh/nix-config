@@ -23,7 +23,7 @@
 
   # Keyboard
   system.keyboard.enableKeyMapping = true;
-  system.keyboard.remapCapsLockToControl = true;
+  system.keyboard.remapCapsLockToControl = false;
 
   # Add ability to used TouchID for sudo authentication
   security.pam.services.sudo_local.touchIdAuth = true;
@@ -147,6 +147,7 @@
       "discord"
       "ghostty"
       "google-chrome"
+      "karabiner-elements"
       "ledger-wallet"
       "netnewswire"
       "postman"
