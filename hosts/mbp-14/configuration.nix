@@ -152,6 +152,7 @@
       "ledger-wallet"
       "netnewswire"
       "postman"
+      "raycast"
       "steam"
       "trezor-suite"
       "zoom"
