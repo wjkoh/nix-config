@@ -169,6 +169,14 @@
           workspace = "S";
           floating = true;
         }
+        {
+          id = "com.apple.Passwords";
+          floating = true;
+        }
+        {
+          id = "com.apple.AppStore";
+          floating = true;
+        }
 
         # --- GitHub (Specific Rules) ---
 
