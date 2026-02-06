@@ -131,6 +131,12 @@
           workspace = "G";
         }
 
+        # --- Investments (I) ---
+        {
+          id = "com.apple.stocks";
+          workspace = "I";
+        }
+
         # --- Media & Entertainment ---
         {
           id = "com.apple.Music";
