@@ -70,11 +70,14 @@
 
   home.file."GEMINI.md".text = ''
     Unless mentioned otherwise:
+    - Use `jujutsu` (jj) instead of `git` and follow a stacked PR workflow.
+    - When checking diffs, use `jj --no-pager diff` to ensure non-interactive output.
     - For trivial changes, briefly explain the change.
     - For complex or long changes, write a design doc before making code changes.
     - Before making code changes, create a new git branch.
     - Always ask for confirmation before changing files.
     - After creating commits on the git branch, create a pull request using the `gh` command.
+    - When creating GitHub PRs, set their base to the parent PR to build stacked PRs.
     - Always format code using `nix fmt .` (not `nix fmt`, which formats stdin).
     - If you need git precommit hooks, use https://github.com/evilmartians/lefthook instead of pre-commit.
     - When creating a GitHub pull request with `gh pr create`, always use explicit flags (e.g., `--head`, `--base`, `--title`, `--body` or `--body-file`) to ensure the command is non-interactive. For complex PR bodies with multiple punctuations or special characters, it is safer to write the body to a temporary text file and use the `--body-file` flag.
@@ -176,6 +179,7 @@
 
   programs.delta = {
     enable = true;
+    enableJujutsuIntegration = true;
     options = {
       navigate = true;
       line-numbers = true;
@@ -200,6 +204,20 @@
       core.pager = "delta";
       interactive.diffFilter = "delta --color-only";
     };
+  };
+
+  programs.jujutsu = {
+    enable = true;
+    settings = {
+      user = {
+        name = "Woojong Koh";
+        email = "wjngkoh@gmail.com";
+      };
+    };
+  };
+
+  programs.jjui = {
+    enable = true;
   };
 
   programs.direnv = {
