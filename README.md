@@ -70,7 +70,13 @@ The `flake.nix` produces two types of outputs:
 - **[YubiKey SSH Guide](yubikey.md)**: Instructions for setting up FIDO2-based
   SSH authentication for passwordless, secure access to remote machines.
 
-## 5. Workflow
+## 5. Agentic Workflows
+
+- **[Stop Using Git for Agentic Coding](agentic-coding-with-jj.md)**: Why
+  Jujutsu (`jj`) is the superior version control system for autonomous AI
+  agents and how to use it effectively.
+
+## 6. Workflow
 
 ### Updating mbp-14 (MacBook Pro)
 

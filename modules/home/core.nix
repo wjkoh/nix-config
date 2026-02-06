@@ -30,6 +30,7 @@
     pkgs.jq
     pkgs.lazydocker
     pkgs.lazygit
+    pkgs.lazyjj
     pkgs.lazyjournal
     pkgs.lazysql
     pkgs.less
@@ -212,6 +213,14 @@
       user = {
         name = "Woojong Koh";
         email = "wjngkoh@gmail.com";
+      };
+      ui = {
+        movement = {
+          edit = true;
+        };
+      };
+      lazyjj = {
+        diff-tool = "delta";
       };
     };
   };
