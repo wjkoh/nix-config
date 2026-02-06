@@ -143,6 +143,10 @@
           workspace = "M";
         } # Music
         {
+          id = "com.apple.podcasts";
+          workspace = "M";
+        } # Podcasts
+        {
           id = "com.apple.TV";
           workspace = "V";
         } # TV
