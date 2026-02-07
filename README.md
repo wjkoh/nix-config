@@ -15,7 +15,44 @@ repository and Flake:
 Git, etc.), while keeping system-specific configurations (disk mounts,
 networking, macOS settings) separate.
 
-## 2. Directory Structure
+## 2. Installation & Bootstrapping
+
+### macOS Clean Install (mbp-14)
+
+Follow these steps to bootstrap a fresh macOS installation:
+
+1. **Download Source:** Go to the
+   [repository page](https://github.com/wjkoh/nix-config), download the source
+   `.zip` file, and unzip it.
+
+2. **Install Prerequisites:**
+   - **Determinate Nix:** Install the Determinate Systems Nix installer from
+     [determinate.systems](https://determinate.systems/).
+   - **Homebrew:** Install Homebrew from [brew.sh](https://brew.sh/).
+
+3. **Apply Initial Configuration:** Run the following command inside the
+   unzipped directory:
+   ```bash
+   sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#mbp-14
+   ```
+   _Note: We explicitly target `.#mbp-14` because the system hostname hasn't
+   been set yet. `nix-darwin` will configure the hostname during this step._
+
+4.  **Setup Repository:**
+    Once the initial switch is complete:
+    *   Remove the temporary unzipped directory.
+    *   Authenticate with GitHub and clone the repository to the correct location:
+        ```bash
+        gh auth login
+        gh repo clone wjkoh/nix-config
+        ```
+    *   Initialize `jujutsu` (jj) to use the existing git repository:
+        ```bash
+        cd nix-config
+        jj git init
+        ```
+
+## 3. Directory Structure
 
 This repository uses a modular structure to maximize code reuse:
 
@@ -41,7 +78,7 @@ This repository uses a modular structure to maximize code reuse:
 │       └── home.nix         # NixOS-specific home overrides
 ```
 
-## 3. Architecture & Implementation
+## 4. Architecture & Implementation
 
 ### The Flake (`flake.nix`)
 
@@ -65,12 +102,12 @@ The `flake.nix` produces two types of outputs:
 - **Host Specifics**: `home.username` and `home.homeDirectory` are defined in
   `hosts/<machine>/home.nix` to allow portability.
 
-## 4. Security & Authentication
+## 5. Security & Authentication
 
 - **[YubiKey SSH Guide](yubikey.md)**: Instructions for setting up FIDO2-based
   SSH authentication for passwordless, secure access to remote machines.
 
-## 5. Workflow
+## 6. Workflow
 
 ### Updating mbp-14 (MacBook Pro)
 
@@ -94,21 +131,21 @@ $ sudo nixos-rebuild switch --flake .#z2-mini
 $ sudo nixos-rebuild switch --flake github:wjkoh/nix-config#z2-mini
 ```
 
-## 6. Benefits
+## 7. Benefits
 
 1. **Single Source of Truth:** Change configuration once, propagate to all
    machines.
 2. **Shared Lockfile:** Ensures identical tool versions across macOS and Linux.
 3. **Atomic Updates:** On NixOS, system and user configs update synchronously.
 
-## 7. Post-Installation Steps
+## 8. Post-Installation Steps
 
 After applying the configuration, some manual steps are required:
 
 ### Tailscale
 
-- **macOS (`mbp-14`):** Tailscale is installed automatically via the Mac App Store.
-  Open the app to authenticate.
+- **macOS (`mbp-14`):** Tailscale is installed automatically via the Mac App
+  Store. Open the app to authenticate.
 - **NixOS (`z2-mini`):** Tailscale is managed as a system service. Run
   `sudo tailscale up` to authenticate.
 
@@ -122,7 +159,13 @@ $ gcloud auth login
 $ gcloud auth application-default login
 ```
 
-## 8. Key Tools & Aliases
+### GitHub
+
+```bash
+gh auth login
+```
+
+## 9. Key Tools & Aliases
 
 To enhance productivity, several modern CLI replacements and aliases are
 configured:
@@ -150,7 +193,7 @@ ssh -t z2-mini "ZELLIJ=1 zsh -l"
 > **Note:** The original commands are available via standard paths or by
 > unaliasing if strictly needed.
 
-## 9. CI & Enforcement
+## 10. CI & Enforcement
 
 ### Git Hooks (Lefthook)
 
