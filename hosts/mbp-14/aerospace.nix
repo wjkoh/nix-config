@@ -181,6 +181,18 @@
           workspace = "I";
         }
 
+        # --- Navigation (N) ---
+        {
+          id = "com.apple.Maps";
+          workspace = "N";
+        }
+
+        # --- Outdoors (O) ---
+        {
+          id = "com.apple.weather";
+          workspace = "O";
+        }
+
         # --- Media & Entertainment ---
         {
           id = "com.apple.Music";
