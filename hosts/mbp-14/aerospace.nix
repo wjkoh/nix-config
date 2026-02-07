@@ -27,6 +27,10 @@
           workspace = "D";
         } # GitHub PWA
         {
+          id = "com.google.Chrome.app.ahiigpfcghkbjfcibpojancebdfjmoop";
+          workspace = "D";
+        } # DevDocs PWA
+        {
           id = "com.google.Chrome";
           title = "GitHub";
           workspace = "D";
@@ -46,6 +50,14 @@
           workspace = "W";
         } # Reminders
         {
+          id = "com.apple.iCal";
+          workspace = "W";
+        } # Apple Calendar
+        {
+          id = "com.apple.journal";
+          workspace = "W";
+        } # Apple Journal
+        {
           id = "net.cementpla.FocusFlights";
           workspace = "Z";
         } # FocusFlight
@@ -60,10 +72,6 @@
           workspace = "R";
         } # GoodLinks
         {
-          id = "com.initialcoms.BOM";
-          workspace = "R";
-        } # RIDI
-        {
           id = "com.amazon.Lassen";
           workspace = "R";
         } # Kindle
@@ -71,8 +79,44 @@
           id = "com.outreadapp.Outread";
           workspace = "R";
         } # Outread
+        {
+          id = "com.apple.news";
+          workspace = "R";
+        } # Apple News
+        {
+          id = "com.apple.iBooksX";
+          workspace = "R";
+        } # Apple Books
+        {
+          id = "com.apple.Preview";
+          workspace = "R";
+        } # Apple Preview
+        {
+          id = "com.google.Chrome.app.lgnggepjiihbfdbedefdhcffnmhcahbm";
+          workspace = "R";
+        } # Reddit PWA
+        {
+          id = "com.google.Chrome.app.lodlkdfmihgonocnmddehnfgiljnadcf";
+          workspace = "R";
+        } # X PWA
+        {
+          id = "com.google.Chrome.app.efcincablbegedjcjafhdbjgdohhgfpp";
+          workspace = "R";
+        } # RIDI PWA
+        {
+          id = "com.initialcoms.BOM";
+          workspace = "R";
+        } # RIDI Native
+        {
+          id = "com.google.Chrome.app.akpamiohjfcnimfljfndmaldlcfphjmp";
+          workspace = "R";
+        } # Instagram PWA
 
         # --- Chat (C) ---
+        {
+          id = "com.apple.mail";
+          workspace = "C";
+        } # Apple Mail
         {
           id = "com.kakao.KakaoTalkMac";
           workspace = "C";
@@ -94,7 +138,7 @@
           workspace = "C";
         } # Zoom
         {
-          id = "com.google.Chrome.app.mdpkiolbdkhdjpekfbkbmhigcaggjagi";
+          id = "com.google.Chrome.app.pommaclcbfghclhalboakcipcmmndhcj";
           workspace = "C";
         } # Google Chat
         {
@@ -147,6 +191,10 @@
           workspace = "M";
         } # Podcasts
         {
+          id = "com.google.Chrome.app.cinhimbnkkaeohfgghhklpknlkffjgod";
+          workspace = "M";
+        } # YouTube Music PWA
+        {
           id = "com.apple.TV";
           workspace = "V";
         } # TV
@@ -154,6 +202,10 @@
           id = "com.apple.Photos";
           workspace = "P";
         } # Photos
+        {
+          id = "com.apple.ScreenContinuity";
+          workspace = "P";
+        } # iPhone Mirroring
 
         # --- Utilities (Floating) ---
         {
@@ -192,6 +244,10 @@
         }
 
         # --- Browser (Catch-All) ---
+        {
+          id = "com.apple.Safari";
+          workspace = "B";
+        }
         {
           id = "com.google.Chrome";
           workspace = "B";
