@@ -5,6 +5,7 @@
       profiles = [
         {
           name = "Default";
+          show_in_menu_bar = false;
           complex_modifications = {
             rules = [
               {
