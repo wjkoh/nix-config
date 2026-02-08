@@ -169,7 +169,7 @@
           workspace = "F";
         }
         {
-          id = "io.trezor.suite";
+          id = "io.trezor.TrezorSuite";
           workspace = "F";
         }
         {
