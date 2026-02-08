@@ -2,10 +2,12 @@
   xdg.configFile."karabiner/karabiner.json" = {
     force = true;
     text = builtins.toJSON {
+      global = {
+        show_in_menu_bar = false;
+      };
       profiles = [
         {
           name = "Default";
-          show_in_menu_bar = false;
           complex_modifications = {
             rules = [
               {
