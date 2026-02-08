@@ -3,63 +3,65 @@
     enable = true;
     settings = let
       appRules = [
-        # --- Core Productivity ---
+        # --- Terminal (T) ---
         {
           id = "com.mitchellh.ghostty";
           workspace = "T";
-        } # Terminal
-        {
-          id = "app.folk.app";
-          workspace = "F";
-        } # Folk
+        }
 
-        # --- Development (D) ---
+        # --- Code (C) ---
         {
           id = "com.apple.dt.Xcode";
-          workspace = "D";
+          workspace = "C";
         }
         {
           id = "com.postmanlabs.mac";
-          workspace = "D";
+          workspace = "C";
         }
         {
           id = "com.google.Chrome.app.mjoklplbddabcmpepnokjaffbmgbkkgg";
-          workspace = "D";
+          workspace = "C";
         } # GitHub PWA
         {
           id = "com.google.Chrome.app.ahiigpfcghkbjfcibpojancebdfjmoop";
-          workspace = "D";
+          workspace = "C";
         } # DevDocs PWA
         {
           id = "com.google.Chrome";
           title = "GitHub";
-          workspace = "D";
+          workspace = "C";
         } # GitHub Tab
 
-        # --- Writing (W) ---
+        # --- Notes & Writing (N) ---
         {
           id = "pro.writer.mac";
-          workspace = "W";
+          workspace = "N";
         } # iA Writer
         {
           id = "com.apple.Notes";
-          workspace = "W";
+          workspace = "N";
         } # Apple Notes
         {
+          id = "com.apple.journal";
+          workspace = "N";
+        } # Apple Journal
+
+        # --- Plan & People (P) ---
+        {
           id = "com.apple.reminders";
-          workspace = "W";
+          workspace = "P";
         } # Reminders
         {
           id = "com.apple.iCal";
-          workspace = "W";
+          workspace = "P";
         } # Apple Calendar
         {
-          id = "com.apple.journal";
-          workspace = "W";
-        } # Apple Journal
+          id = "app.folk.app";
+          workspace = "P";
+        } # Folk
         {
           id = "net.cementpla.FocusFlights";
-          workspace = "Z";
+          workspace = "P";
         } # FocusFlight
 
         # --- Reading (R) ---
@@ -112,52 +114,44 @@
           workspace = "R";
         } # Instagram PWA
 
-        # --- Chat (C) ---
+        # --- Messaging (M) ---
         {
           id = "com.apple.mail";
-          workspace = "C";
+          workspace = "M";
         } # Apple Mail
         {
           id = "com.kakao.KakaoTalkMac";
-          workspace = "C";
+          workspace = "M";
         } # KakaoTalk
         {
           id = "com.hnc.Discord";
-          workspace = "C";
+          workspace = "M";
         } # Discord
         {
           id = "com.tinyspeck.slackmacgap";
-          workspace = "C";
+          workspace = "M";
         } # Slack
         {
           id = "ru.keepcoder.Telegram";
-          workspace = "C";
+          workspace = "M";
         } # Telegram
         {
           id = "us.zoom.xos";
-          workspace = "C";
+          workspace = "M";
         } # Zoom
         {
           id = "com.google.Chrome.app.pommaclcbfghclhalboakcipcmmndhcj";
-          workspace = "C";
+          workspace = "M";
         } # Google Chat
         {
           id = "com.google.Chrome";
           title = "Google Chat";
-          workspace = "C";
+          workspace = "M";
         } # Google Chat Tab
 
-        # --- Security & System (S) ---
+        # --- Security (S) ---
         {
           id = "com.bitwarden.desktop";
-          workspace = "S";
-        }
-        {
-          id = "com.ledger.live";
-          workspace = "S";
-        }
-        {
-          id = "io.trezor.suite";
           workspace = "S";
         }
         {
@@ -169,55 +163,70 @@
           workspace = "S";
         }
 
+        # --- Finance (F) ---
+        {
+          id = "com.ledger.live";
+          workspace = "F";
+        }
+        {
+          id = "io.trezor.suite";
+          workspace = "F";
+        }
+        {
+          id = "com.apple.stocks";
+          workspace = "F";
+        }
+
         # --- Games (G) ---
         {
           id = "com.valvesoftware.steam";
           workspace = "G";
         }
 
-        # --- Investments (I) ---
-        {
-          id = "com.apple.stocks";
-          workspace = "I";
-        }
-
-        # --- Navigation (N) ---
+        # --- Lifestyle (O) ---
         {
           id = "com.apple.Maps";
-          workspace = "N";
+          workspace = "O";
         }
-
-        # --- Outdoors (O) ---
         {
           id = "com.apple.weather";
           workspace = "O";
         }
+        {
+          id = "com.apple.Photos";
+          workspace = "O";
+        }
+        {
+          id = "com.apple.ScreenContinuity";
+          workspace = "O";
+        } # iPhone Mirroring
 
-        # --- Media & Entertainment ---
+        # --- Entertainment (E) ---
         {
           id = "com.apple.Music";
-          workspace = "M";
+          workspace = "E";
         } # Music
         {
           id = "com.apple.podcasts";
-          workspace = "M";
+          workspace = "E";
         } # Podcasts
         {
           id = "com.google.Chrome.app.cinhimbnkkaeohfgghhklpknlkffjgod";
-          workspace = "M";
+          workspace = "E";
         } # YouTube Music PWA
         {
           id = "com.apple.TV";
-          workspace = "V";
+          workspace = "E";
         } # TV
         {
-          id = "com.apple.Photos";
-          workspace = "P";
-        } # Photos
+          id = "com.google.Chrome.app.agimnkijcaahngcdmfeangaknmldooml";
+          workspace = "E";
+        } # YouTube PWA
         {
-          id = "com.apple.ScreenContinuity";
-          workspace = "P";
-        } # iPhone Mirroring
+          id = "com.google.Chrome";
+          title = "YouTube";
+          workspace = "E";
+        }
 
         # --- Utilities (Floating) ---
         {
@@ -240,19 +249,6 @@
         {
           id = "com.apple.AppStore";
           floating = true;
-        }
-
-        # --- GitHub (Specific Rules) ---
-
-        # --- YouTube (Specific Rules for Video Workspace) ---
-        {
-          id = "com.google.Chrome.app.agimnkijcaahngcdmfeangaknmldooml";
-          workspace = "V";
-        }
-        {
-          id = "com.google.Chrome";
-          title = "YouTube";
-          workspace = "V";
         }
 
         # --- Browser (Catch-All) ---
@@ -346,28 +342,18 @@
       # This config version is only available since 'config-version = 2'
       # Fallback value (if you omit the key): persistent-workspaces = []
       persistent-workspaces = [
-        "A"
         "B"
         "C"
-        "D"
         "E"
         "F"
         "G"
-        "I"
         "M"
         "N"
         "O"
         "P"
-        "Q"
         "R"
         "S"
         "T"
-        "U"
-        "V"
-        "W"
-        "X"
-        "Y"
-        "Z"
       ];
 
       # A callback that runs every time binding mode changes
@@ -449,55 +435,35 @@
         alt-equal = "resize smart +50";
 
         # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-        alt-a = "workspace A"; # In your config, you can drop workspace bindings that you don't need
         alt-b = "workspace B";
         alt-c = "workspace C";
-        alt-d = "workspace D";
         alt-e = "workspace E";
         alt-f = "workspace F";
         alt-g = "workspace G";
-        alt-i = "workspace I";
         alt-m = "workspace M";
         alt-n = "workspace N";
         alt-o = "workspace O";
         alt-p = "workspace P";
-        alt-q = "workspace Q";
         alt-r = "workspace R";
         alt-s = "workspace S";
         alt-t = "workspace T";
-        alt-u = "workspace U";
-        alt-v = "workspace V";
-        alt-w = "workspace W";
-        alt-x = "workspace X";
-        alt-y = "workspace Y";
-        alt-z = "workspace Z";
 
         alt-rightSquareBracket = "workspace next";
         alt-leftSquareBracket = "workspace prev";
 
         # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-        alt-shift-a = "move-node-to-workspace A";
         alt-shift-b = "move-node-to-workspace B";
         alt-shift-c = "move-node-to-workspace C";
-        alt-shift-d = "move-node-to-workspace D";
         alt-shift-e = "move-node-to-workspace E";
         alt-shift-f = "move-node-to-workspace F";
         alt-shift-g = "move-node-to-workspace G";
-        alt-shift-i = "move-node-to-workspace I";
         alt-shift-m = "move-node-to-workspace M";
         alt-shift-n = "move-node-to-workspace N";
         alt-shift-o = "move-node-to-workspace O";
         alt-shift-p = "move-node-to-workspace P";
-        alt-shift-q = "move-node-to-workspace Q";
         alt-shift-r = "move-node-to-workspace R";
         alt-shift-s = "move-node-to-workspace S";
         alt-shift-t = "move-node-to-workspace T";
-        alt-shift-u = "move-node-to-workspace U";
-        alt-shift-v = "move-node-to-workspace V";
-        alt-shift-w = "move-node-to-workspace W";
-        alt-shift-x = "move-node-to-workspace X";
-        alt-shift-y = "move-node-to-workspace Y";
-        alt-shift-z = "move-node-to-workspace Z";
 
         # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
         alt-tab = "workspace-back-and-forth";
