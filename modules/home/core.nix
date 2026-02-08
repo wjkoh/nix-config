@@ -206,6 +206,9 @@
       merge-tools.vimdiff = {
         program = "nvim";
       };
+      lazyjj = {
+        diff-tool = "delta";
+      };
     };
   };
 
