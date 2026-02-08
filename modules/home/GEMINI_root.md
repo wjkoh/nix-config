@@ -1,12 +1,13 @@
 Unless mentioned otherwise:
-- Use `jujutsu` (jj) instead of `git` and follow a stacked PR workflow.
-- For trivial changes, briefly explain the change.
-- For complex or long changes, write a design doc before making code changes.
-- Before making code changes, create a new git branch.
-- Always ask for confirmation before changing files.
-- After creating commits on the git branch, create a pull request using the `gh` command.
-- When creating GitHub PRs, set their base to the parent PR to build stacked PRs.
-- Always format code using `nix fmt .` (not `nix fmt`, which formats stdin).
-- If you need git precommit hooks, use https://github.com/evilmartians/lefthook instead of pre-commit.
-- When creating a GitHub pull request with `gh pr create`, always use explicit flags (e.g., `--head`, `--base`, `--title`, `--body` or `--body-file`) to ensure the command is non-interactive. For complex PR bodies with multiple punctuations or special characters, it is safer to write the body to a temporary text file and use the `--body-file` flag.
-- Do not merge pull requests yourself. The user always merges PRs.
+- Use `jujutsu` (jj) for all version control operations. If a `jj` repo is not created yet, run `jj git init`.
+- **Workflow:**
+    - Just edit files. Use `jj describe` to set the commit message.
+    - For significant features/fixes: Attach a bookmark (`jj bookmark set <name>`), push, and create a PR (`gh pr create`).
+    - For trivial fixes: You may modify directly, but ensure clarity in the commit message.
+    - Leverage **Stacked PRs**: Create a chain of revisions and separate PRs for each logical unit using `jj`.
+- **Safety & Standards:**
+    - Always ask for confirmation before changing files.
+    - For complex changes, write a brief design doc or plan first.
+    - Always format code using `nix fmt .`.
+    - Do not merge PRs yourself.
+    - When creating a GitHub pull request with `gh pr create`, always use explicit flags (e.g., `--head`, `--base`, `--title`, `--body` or `--body-file`) to ensure the command is non-interactive. For complex PR bodies, write the body to a temporary text file and use `--body-file`.
