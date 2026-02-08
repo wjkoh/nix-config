@@ -31,21 +31,4 @@ You can write custom scripts (Bash, Python, Swift, Node.js) that appear as comma
 ## Installation
 Raycast is best installed via Homebrew Cask or manual download, as it is a closed-source macOS application that auto-updates itself.
 
-## Stats (System Monitor)
 
-You have added `Stats` to your configuration (via Homebrew). Once applied, it will appear in your applications.
-
-### Recommended Configuration
-1.  **Open Stats:** Launch it from Raycast or Applications.
-2.  **Grant Permissions:** It may ask for accessibility permissions to read system stats.
-3.  **Modules:** Enable **CPU**, **RAM**, **Disk**, and **Network**.
-    *   *Tip:* Set them to "Mini" or "Text" mode to save menu bar space.
-4.  **Start at Login:** Go to Settings (gear icon) > General > "Start at login".
-
-### To Apply Changes
-To install Stats (and applying the configuration changes), run:
-```bash
-darwin-rebuild switch --flake .
-# OR if you are using standalone home-manager
-home-manager switch --flake .
-```

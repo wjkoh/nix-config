@@ -1,10 +1,13 @@
 Unless mentioned otherwise:
 - Use `jujutsu` (jj) for all version control operations. If a `jj` repo is not created yet, run `jj git init`.
 - **Workflow:**
-    - Just edit files. Use `jj describe` to set the commit message.
-    - For significant features/fixes: Attach a bookmark (`jj bookmark set <name>`), push, and create a PR (`gh pr create`).
-    - For trivial fixes: You may modify directly, but ensure clarity in the commit message.
-    - Leverage **Stacked PRs**: Create a chain of revisions and separate PRs for each logical unit using `jj`.
+    - **Default (Direct Push):**
+        1. Edit files.
+        2. `jj describe` to set the commit message.
+        3. Move the main bookmark to the current revision: `jj bookmark set main -r @`.
+        4. Push: `jj git push`.
+    - **Complex Features:** For experimental or risky changes, attach a specific bookmark (`jj bookmark set <name>`), push, and optionally create a PR (`gh pr create`).
+    - **Stacked Changes:** You may still create chains of revisions for logical separation, but prefer squashing or linearly updating `main` for simple tasks.
 - **Safety & Standards:**
     - Always ask for confirmation before changing files.
     - For complex changes, write a brief design doc or plan first.
