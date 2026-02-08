@@ -6,5 +6,6 @@
     window-padding-x = 10
     window-padding-y = 10
     macos-titlebar-style = transparent
+    clipboard-read = allow
   '';
 }

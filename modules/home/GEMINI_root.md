@@ -12,6 +12,7 @@ Unless mentioned otherwise:
     - **Stacked Changes:** You may still create chains of revisions for logical separation, but prefer squashing or linearly updating `main` for simple tasks.
 - **Safety & Standards:**
     - Always ask for confirmation before changing files.
+    - You can always describe commits anytime, but you should always get confirmation before pushing to remote.
     - For complex changes, write a brief design doc or plan first.
     - Always format code using `nix fmt .`.
     - Do not merge PRs yourself.

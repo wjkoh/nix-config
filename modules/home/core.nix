@@ -28,11 +28,8 @@
     pkgs.gron
     pkgs.grpcurl
     pkgs.jq
-    pkgs.lazydocker
-    pkgs.lazygit
     pkgs.lazyjj
     pkgs.lazyjournal
-    pkgs.lazysql
     pkgs.less
     pkgs.libfido2
     pkgs.marp-cli
@@ -47,6 +44,9 @@
     pkgs.yq-go
     pkgs.zellij
   ];
+
+  programs.lazydocker.enable = true;
+  programs.lazysql.enable = true;
 
   home.sessionVariables = {
     PAGER = "less";
@@ -166,10 +166,11 @@
 
   programs.delta = {
     enable = true;
+    enableGitIntegration = true;
     enableJujutsuIntegration = true;
     options = {
       navigate = true;
-      line-numbers = true;
+      keep-plus-minus-markers = true;
     };
   };
 
@@ -188,8 +189,16 @@
       };
       init.defaultBranch = "main";
       pull.rebase = true;
-      core.pager = "delta";
-      interactive.diffFilter = "delta --color-only";
+    };
+  };
+
+  programs.lazygit = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = {
+      git = {
+        pagers = [{pager = "delta --paging=never";}];
+      };
     };
   };
 
@@ -199,9 +208,6 @@
       user = {
         name = "Woojong Koh";
         email = "wjngkoh@gmail.com";
-      };
-      ui = {
-        paginate = "never";
       };
       merge-tools.vimdiff = {
         program = "nvim";
