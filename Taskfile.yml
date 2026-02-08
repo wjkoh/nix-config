@@ -41,7 +41,7 @@ tasks:
       - 'echo "NOTE: If you have multiple resident keys, ssh-keygen may create files with suffixes (e.g., id_ed25519_sk_rk_...). Check output if rename fails."'
       - mkdir -p ~/.ssh
       - cd /tmp && ssh-keygen -K
-      - mv /tmp/id_ed25519_sk ~/.ssh/{{.NAME}}
-      - mv /tmp/id_ed25519_sk.pub ~/.ssh/{{.NAME}}.pub
+      - mv /tmp/id_ed25519_sk_rk_wjkoh ~/.ssh/{{.NAME}}
+      - mv /tmp/id_ed25519_sk_rk_wjkoh.pub ~/.ssh/{{.NAME}}.pub
       - chmod 600 ~/.ssh/{{.NAME}}
       - echo "Key recovered to ~/.ssh/{{.NAME}}"
