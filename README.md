@@ -223,3 +223,9 @@ $ nix flake check
 If `dotnet` is found in the dependency graph, the check will fail and print the
 dependency path.
 
+## 11. Raycast
+
+- **[Raycast Guide](raycast_guide.md)**: A guide to using Raycast, a powerful
+  launcher for macOS that acts as a "Command Palette" for your entire operating
+  system.
+

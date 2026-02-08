@@ -153,6 +153,7 @@
       "netnewswire"
       "postman"
       "raycast"
+      "stats"
       "steam"
       "trezor-suite"
       "zoom"
