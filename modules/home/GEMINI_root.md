@@ -1,6 +1,8 @@
 Unless mentioned otherwise:
 - Use `jujutsu` (jj) for all version control operations. If a `jj` repo is not created yet, run `jj git init`.
 - **Workflow:**
+    - **Setup / Troubleshooting:**
+        - If `jj git push` fails for `main`, run `jj bookmark track main --remote=origin`. This establishes the link between local `main` and `origin/main`, which might be missing after a fresh clone or if `main` was recreated manually.
     - **Default (Direct Push):**
         1. Edit files.
         2. `jj describe` to set the commit message.
