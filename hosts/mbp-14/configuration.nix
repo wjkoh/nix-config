@@ -57,8 +57,8 @@
       ];
       wvous-tl-corner = 1;
       wvous-tr-corner = 1;
-      wvous-bl-corner = 13;
-      wvous-br-corner = 2;
+      wvous-bl-corner = 1;
+      wvous-br-corner = 1;
     };
     finder = {
       CreateDesktop = false;
