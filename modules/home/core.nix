@@ -124,6 +124,9 @@
       "general": {
         "previewFeatures": true,
         "preferredEditor": "neovim"
+      },
+      "model": {
+        "name": "gemini-3-pro-preview"
       }
     }
   '';
