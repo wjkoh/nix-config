@@ -47,6 +47,7 @@
 
   programs.lazydocker.enable = true;
   programs.lazysql.enable = true;
+  services.syncthing.enable = true;
 
   home.sessionVariables = {
     PAGER = "less";
