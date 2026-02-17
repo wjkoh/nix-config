@@ -47,7 +47,65 @@
 
   programs.lazydocker.enable = true;
   programs.lazysql.enable = true;
-  services.syncthing.enable = true;
+
+  services.syncthing = {
+    enable = true;
+    settings = {
+      devices = {
+        "rg40xxv" = {
+          id = "XRSMHL3-TW4FT7D-HRMN72W-PQUCTH7-TCHA4IZ-YB756RB-D7HECDX-A5DKHAV";
+        };
+        "mbp-14" = {
+          id = "ZUSXIMP-72YTSXV-SIDIKNA-P7RAW55-QKROULC-7LQWC5B-SSPVNAP-A4CQFAZ";
+        };
+      };
+      folders = {
+        "muos-save" = {
+          id = "5uzle-nvuvj";
+          path = "~/muos/save";
+          devices = ["rg40xxv" "mbp-14"];
+          versioning = {
+            type = "simple";
+            params = {
+              keep = "5";
+            };
+          };
+        };
+        "muos-roms" = {
+          id = "qheiz-cageo";
+          path = "~/muos/roms";
+          devices = ["rg40xxv" "mbp-14"];
+          versioning = {
+            type = "simple";
+            params = {
+              keep = "5";
+            };
+          };
+        };
+        "muos-bios" = {
+          id = "wnx3q-dqhbd";
+          path = "~/muos/bios";
+          devices = ["rg40xxv" "mbp-14"];
+          versioning = {
+            type = "simple";
+            params = {
+              keep = "5";
+            };
+          };
+        };
+      };
+    };
+  };
+
+  home.file."muos/save/.stignore".text = ''
+    .DS_Store
+  '';
+  home.file."muos/roms/.stignore".text = ''
+    .DS_Store
+  '';
+  home.file."muos/bios/.stignore".text = ''
+    .DS_Store
+  '';
 
   home.sessionVariables = {
     PAGER = "less";
