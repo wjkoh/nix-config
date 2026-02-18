@@ -182,7 +182,11 @@
     };
   };
 
-  home.file."Library/Preferences/glow/glow.yml".text = ''
+  home.file."${
+    if pkgs.stdenv.isDarwin
+    then "Library/Preferences"
+    else ".config"
+  }/glow/glow.yml".text = ''
     tui: true
   '';
 
