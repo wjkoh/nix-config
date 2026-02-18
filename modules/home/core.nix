@@ -179,6 +179,10 @@
     };
   };
 
+  home.file."Library/Preferences/glow/glow.yml".text = ''
+    tui: true
+  '';
+
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
