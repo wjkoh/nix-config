@@ -35,3 +35,4 @@ Unless mentioned otherwise:
     explicit flags (e.g., `--head`, `--base`, `--title`, `--body` or
     `--body-file`) to ensure the command is non-interactive. For complex PR
     bodies, write the body to a temporary text file and use `--body-file`.
+  - **Timestamps:** Whenever you create a new document, Markdown (`.md`) file, or similar text file, you must include the current date and time in the document so it is clear when it was written.
