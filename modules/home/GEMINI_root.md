@@ -29,7 +29,7 @@ Unless mentioned otherwise:
     can `jj describe` and `jj new` anytime, but **must** get confirmation before
     pushing.
   - **Planning:** For complex changes, write a brief design doc or plan first.
-  - **Formatting:** Always format code using `nix fmt .`.
+  - **Formatting & Verification:** Always format code using `nix fmt .`. Additionally, if a `Taskfile.yml` is present, run `task fmt` (if available). After making any code changes, you must build the executable (directing the output to `/dev/null` or `/tmp` to avoid clutter) or run relevant tests to verify the changes *before* passing control back to the user.
   - **PRs:** Do not merge PRs yourself.
   - **Non-Interactive PR Creation:** When using `gh pr create`, always use
     explicit flags (e.g., `--head`, `--base`, `--title`, `--body` or
