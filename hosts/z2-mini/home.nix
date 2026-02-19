@@ -10,6 +10,11 @@
     settings = {
       session_restore_mode = "simple";
       prompt_prefix = "";
+      forward_env = [
+        "SSH_CONNECTION"
+        "SSH_CLIENT"
+        "SSH_TTY"
+      ];
     };
   };
 
@@ -24,6 +29,7 @@
             echo "  Attach: shpool attach <name>"
             echo "  List:   shpool list"
             echo "  Detach: (Ctrl-Space, Ctrl-q) or shpool detach <name>"
+            echo "  Force Detach: shpool detach -f <name> (if session is stuck)"
             echo "  Kill:   shpool kill <name>"
             echo "-----------------------"
         fi
