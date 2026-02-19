@@ -35,7 +35,3 @@ Unless mentioned otherwise:
     explicit flags (e.g., `--head`, `--base`, `--title`, `--body` or
     `--body-file`) to ensure the command is non-interactive. For complex PR
     bodies, write the body to a temporary text file and use `--body-file`.
-
-- The user requires explicit permission for ANY code changes, even after a
-  design is approved. Always ask "May I implement this now?" and wait for a
-  clear "Yes" or similar command.
