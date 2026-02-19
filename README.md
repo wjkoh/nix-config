@@ -178,16 +178,16 @@ configured:
 | `cat`   | `bat`    | A `cat` clone with syntax highlighting and Git integration. |
 | `ls`    | `eza`    | A modern, maintained replacement for `ls`.                  |
 
-### Zellij Auto-Start (Remote)
+### Shpool (Remote)
 
-On `z2-mini`, Zellij is configured to start automatically upon SSH login to
-ensure persistent sessions.
+On `z2-mini`, `shpool` is configured to help manage persistent sessions. Upon SSH login,
+it lists active sessions and provides commands to attach, detach, or kill them.
 
-**Escape Hatch:** If you need to bypass Zellij (e.g., if it's crashing or you
-need a clean shell), use the following command to log in:
+**Escape Hatch:** If you need to bypass the `shpool` check (e.g., for scripting),
+set `SHPOOL_SESSION_NAME` to any value:
 
 ```bash
-ssh -t z2-mini "ZELLIJ=1 zsh -l"
+ssh -t z2-mini "SHPOOL_SESSION_NAME=ignore zsh -l"
 ```
 
 > **Note:** The original commands are available via standard paths or by

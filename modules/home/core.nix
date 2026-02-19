@@ -42,7 +42,6 @@
     pkgs.tldr
     pkgs.yubikey-manager
     pkgs.yq-go
-    pkgs.zellij
   ];
 
   programs.lazydocker.enable = true;
@@ -132,19 +131,6 @@
   '';
 
   home.file."GEMINI.md".text = builtins.readFile ./GEMINI_root.md;
-
-  xdg.configFile."zellij/config.kdl" = {
-    text = ''
-      pane_frames false
-      default_layout "compact"
-      mouse_mode true
-      theme "catppuccin-mocha"
-      show_startup_tips false
-      show_release_notes false
-      simplified_ui true
-    '';
-    force = true;
-  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
