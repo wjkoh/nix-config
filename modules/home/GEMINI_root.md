@@ -1,5 +1,9 @@
 Unless mentioned otherwise:
 
+- **Environment & Context:**
+  - **Environment:** Assume the environment is managed by Nix and `direnv`. If a tool is missing, suggest adding it to the relevant `flake.nix` devShell rather than using system-wide package managers.
+  - **Project Context:** Always read `README.md` and `Taskfile.yml` (if present) when entering a new directory to understand the local build/test commands before taking action.
+
 - **Version Control:** Use `jujutsu` (`jj`). Run `jj git init` if needed. Prefer small, atomic, stacked commits.
 - **Workflow:**
   - **Stacking:** For each atomic change: edit files, set the message (`jj describe`), then start a new revision (`jj new`).
