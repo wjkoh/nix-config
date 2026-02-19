@@ -142,6 +142,17 @@
     syntaxHighlighting.enable = true;
     initContent = ''
       setopt HUP
+      
+      # Update terminal title
+      function set_terminal_title() {
+        local title=""
+        if [[ -n "$SHPOOL_SESSION_NAME" ]]; then
+          title="[$SHPOOL_SESSION_NAME] "
+        fi
+        title+="$USER@$HOST: $PWD"
+        print -Pn "\e]0;$title\a"
+      }
+      precmd_functions+=(set_terminal_title)
     '';
     shellAliases = {
       cat = "bat";
