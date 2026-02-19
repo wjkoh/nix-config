@@ -186,7 +186,7 @@
       format = "$env_var$all";
       env_var = {
         SHPOOL_SESSION_NAME = {
-          format = "[\[$env_value\]](bold green) ";
+          format = "[\\[$env_value\\]](bold green) ";
           variable = "SHPOOL_SESSION_NAME";
         };
       };
