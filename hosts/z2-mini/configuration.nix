@@ -93,6 +93,9 @@
     description = "Woojong Koh";
     extraGroups = ["networkmanager" "wheel"];
     shell = pkgs.zsh;
+    # Enable linger to allow systemd user services (like shpool) to run at boot
+    # and persist after logout.
+    linger = true;
     openssh.authorizedKeys.keys = [
       "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIF78TmHCCGaDI0mChwtkC8lw4ibdQWJB+UfUvE6MY3AdAAAACXNzaDp3amtvaA== wjkoh@mbp-14" # Nano113
       "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIHoPkScwCuLSBbPGZO2clXnkRb6iMvoFKT8u5CggGus+AAAACXNzaDp3amtvaA== wjkoh@mbp-14" # NFC056

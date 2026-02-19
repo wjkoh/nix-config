@@ -6,6 +6,7 @@
 
   services.shpool = {
     enable = true;
+    systemd = true;
     settings = {
       session_restore_mode = "simple";
       prompt_prefix = "";

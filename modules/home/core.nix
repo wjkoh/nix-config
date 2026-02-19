@@ -183,12 +183,11 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
-      format = "$all$custom";
-      custom = {
-        shpool = {
-          when = "test -n \"$SHPOOL_SESSION_NAME\"";
-          command = "echo \"$SHPOOL_SESSION_NAME\"";
-          format = "via [$output](bold green) ";
+      format = "$env_var$all";
+      env_var = {
+        SHPOOL_SESSION_NAME = {
+          format = "[$env_value](bold green) ";
+          variable = "SHPOOL_SESSION_NAME";
         };
       };
     };
