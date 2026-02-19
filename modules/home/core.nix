@@ -140,6 +140,9 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    initExtra = ''
+      setopt HUP
+    '';
     shellAliases = {
       cat = "bat";
       df = "duf";
@@ -179,6 +182,16 @@
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
+    settings = {
+      format = "$all$custom";
+      custom = {
+        shpool = {
+          when = "test -n \"$SHPOOL_SESSION_NAME\"";
+          command = "echo \"$SHPOOL_SESSION_NAME\"";
+          format = "via [$output](bold green) ";
+        };
+      };
+    };
   };
 
   programs.eza = {
