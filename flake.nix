@@ -16,6 +16,8 @@
       url = "github:wjkoh/neovim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hayes.url = "path:/home/wjkoh/hayes";
+    hayes.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -24,6 +26,7 @@
     home-manager,
     nix-darwin,
     neovim,
+    hayes,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -105,6 +108,9 @@
               manual.html.enable = false;
             };
           }
+
+          # Import the Hayes systemd deployment module
+          hayes.nixosModules.default
         ];
       };
     };
