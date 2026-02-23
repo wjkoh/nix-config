@@ -14,6 +14,7 @@
 
   home.packages = [
     llamaCppPackage
+    pkgs.autossh
     pkgs.btop
     pkgs.curl
     pkgs.duf
@@ -155,6 +156,7 @@
       precmd_functions+=(set_terminal_title)
     '';
     shellAliases = {
+      ssh = "autossh -M 0";
       cat = "bat";
       df = "duf";
       du = "gdu";
@@ -288,5 +290,13 @@
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
+  };
+
+  programs.ssh = {
+    enable = true;
+    matchBlocks."*" = {
+      serverAliveInterval = 60;
+      serverAliveCountMax = 3;
+    };
   };
 }
