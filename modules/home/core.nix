@@ -161,7 +161,6 @@
       u = "gdu";
       m = "tldr";
       l = "eza --icons";
-      ssh = "autossh -M 0";
       ll = "eza -l --icons --git -a";
       lt = "eza --tree --level=2 --long --icons --git";
       lx = "eza -lbhHigUmuSa --time-style=long-iso --git --color-scale";
